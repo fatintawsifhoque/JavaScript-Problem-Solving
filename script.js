@@ -159,4 +159,92 @@ function compareNumbers(a, b) {
         
     }
 }
-compareNumbers(100,20)
+compareNumbers(100, 20)
+
+/*Problem- > 11 => Write a function sumEvenNumbers(limit) that:
+
+Takes a number limit (e.g., 10)
+Uses a for loop to go from 1 to limit
+Adds only the even numbers
+Prints the total sum */
+function sumEvenNumbers(limit) {
+    let sum = 0;
+    for (let i = 0; i <= limit; i++){
+        if (i % 2 == 0) {
+            sum+=i
+        }
+    }
+    console.log(sum);
+    
+}
+sumEvenNumbers(10)
+
+/*Problem- > 12 => Count Vowels in a Word (Hardcoded)
+Write a function countVowels() that:
+
+Checks each character in the word "javascript" (hardcode this word)
+Uses a for loop to go through each letter (use charAt(i))
+Counts how many are vowels (a, e, i, o, u) — use if...else
+Prints the total count */
+function countVowels(word) {
+    let count = 0;
+    word = word.toLowerCase();
+    for (let i = 0; i < word.length; i++){
+        if (word[i] == "a" || word[i] == "e" || word[i] == "i" || word[i] == "o" || word[i] == "u") {
+            count++
+        }
+    }
+    console.log(count);
+    
+}
+countVowels("JAVASCRIPT")
+
+/*Problem- > 13 => Print FizzBuzz (Classic!)
+Write a function fizzBuzz() that:
+
+Loops from 1 to 100
+For each number:
+If divisible by 3 and 5, print "FizzBuzz"
+Else if divisible by 3, print "Fizz"
+Else if divisible by 5, print "Buzz"
+Else, print the number */
+function fizzBuzz() {
+    for (let i = 1; i <= 100; i++){
+        if (i % 3 == 0 && i % 5 == 0) {
+            console.log('Fizzbuzz');
+            
+        }
+       else if (i % 3 == 0) {
+            console.log('Fizz');
+            
+        }
+       else if (i % 5 == 0) {
+            console.log('Buzz');
+            
+        }
+        else {
+            console.log(i);
+            
+        }
+    }
+}
+fizzBuzz()
+
+/*Problem- > 14 => Find Largest Number in a Range
+Write a function findLargest(start, end) that:
+
+Loops from start to end (inclusive)
+Finds the largest number that is divisible by 7 in that range
+If none found, prints "No number divisible by 7"
+Otherwise, prints the number */
+function findLargest(start, end) {
+    for (let i = end; i >= start; i--) {
+        if (i % 7 === 0) {
+            console.log(i);
+            return;
+        }
+    }
+    console.log("No number divisible by 7");
+}
+
+findLargest(1,7)
