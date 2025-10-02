@@ -247,4 +247,123 @@ function findLargest(start, end) {
     console.log("No number divisible by 7");
 }
 
-findLargest(1,7)
+findLargest(1, 7)
+
+/*Problem- > 15 => Write a function checkPassword(password) that:
+
+Uses a loop to count characters manually (without .length)
+If count ≥ 8 → "Strong password"
+Else → "Weak password" */
+function checkPassword(password) {
+    count = 0;
+    let passwords = password.split("");
+    passwords.forEach(element => {
+        count++
+    });
+    if (count >= 8) {
+        console.log("Strong Password");
+    }
+    else {
+       console.log("Weak Password.");
+        
+    }
+}
+checkPassword("Fatinkkk")
+
+/*Problem- > 16 => Print Numbers from 1 to N
+Write a function printNumbers(n) that uses a while loop to print numbers from 1 to n (inclusive).
+
+Example:
+printNumbers(5) →
+1
+2
+3
+4
+5 
+ */
+function printNumbers(n) {
+    let i = 1;
+    while (i <= n) {
+        console.log(i);
+        i++;
+    }
+}
+printNumbers(5)
+
+/*Problem- > 17 => Write a function sumNatural(n) that uses a while loop to calculate and print the sum of numbers from 1 to n.
+
+Formula: 1 + 2 + 3 + ... + n
+Example:
+sumNatural(4) → 10 (because 1+2+3+4 = 10)  */
+function sumNatural(n) {
+    let sum = 0;
+    let i = 1
+    while (i <= n) {
+        sum += i;
+        i++
+    }
+    console.log(sum);
+}
+sumNatural(4)
+
+/*Problem- > 18 =>  Reverse a Number
+Write a function reverseNumber(num) that uses a while loop to reverse the digits of a positive integer and print the result.
+
+Example:
+reverseNumber(123) → 321
+reverseNumber(4567) → 7654  */
+function reverseNumber(num) {
+    let reversed =""
+    let nums = num.toString()
+    let lastIndex = nums.length - 1;
+    while (lastIndex >= 0) {
+        reversed += nums[lastIndex];
+        lastIndex--
+    }
+    
+    console.log(Number(reversed));
+    
+}
+reverseNumber(123)
+
+/*Problem- > 19 => Count Digits in a Number
+Write a function countDigits(num) that uses a while loop to count how many digits are in a positive integer and print the count.
+
+Example:
+countDigits(123) → 3
+countDigits(5) → 1
+countDigits(1000) → 4  */
+function countDigits(num) {
+    let count = 0;
+    let nums = num.toString()
+    let lastIndex = nums.length - 1;
+    while (lastIndex >= 0) {
+        count++
+        lastIndex--
+    }
+    
+    console.log(count);
+}
+countDigits(123)
+
+/*Problem- > 20 => Power of Two Checker
+Write a function isPowerOfTwo(n) that uses a while loop to check if a number n is a power of 2 (like 1, 2, 4, 8, 16, 32, ...).
+
+If n is a power of 2, print "Yes"
+Otherwise, print "No"  */
+function isPowerOfTwo(n) {
+    if (n <= 0) {
+        console.log("No");
+        return;
+    }
+    while (n > 1) {
+        if (n % 2 !== 0) { 
+            console.log("No");
+            return;
+        }
+        n /= 2;
+    }
+    console.log("Yes");
+}
+
+isPowerOfTwo(1);
