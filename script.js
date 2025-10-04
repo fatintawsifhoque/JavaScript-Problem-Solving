@@ -367,3 +367,89 @@ function isPowerOfTwo(n) {
 }
 
 isPowerOfTwo(1);
+
+/*Problem- > 21 => Write a function makeUpper(str) that takes a string and returns it in all uppercase letters.
+
+Example:
+makeUpper("hello") → "HELLO"
+makeUpper("JavaScript") → "JAVASCRIPT"*/
+function makeUpper(str) {
+    let upperStr = str.toUpperCase()
+    console.log(upperStr);   
+}
+makeUpper("helle")
+
+/*Problem- > 22 => Check if Word Contains "script"
+Write a function hasScript(word) that checks if the word contains "script" (case-insensitive).
+
+If yes, print "Found!"
+If no, print "Not found."
+Example:
+hasScript("JavaScript") → "Found!"
+hasScript("Python") → "Not found."  */
+function hasScript(word) {
+    word = word.toLowerCase();
+    let match = "script"
+    if (word.includes(match)) {
+        console.log("Found!");
+    }
+    else {
+        console.log("Not found."); 
+    }
+}
+hasScript("scrip")
+
+/*Problem- > 23 => Get First and Last Character
+Write a function firstAndLast(str) that prints the first and last character of a string.
+
+Example:
+firstAndLast("hello") → "h" and "o"
+firstAndLast("a") → "a" and "a"
+firstAndLast("")  */
+function firstAndLast(str) {
+    
+    let first = str.charAt(0);
+    let last = str.charAt(str.length - 1)
+    if (str !== "") {
+        console.log(`"${first}" and "${last}"`);   
+    }
+    else {
+        console.log("Empty"); 
+    }
+}
+firstAndLast("")
+
+/*Problem- > 24 => Remove Extra Spaces
+Write a function cleanSpace(str) that removes extra spaces from the beginning and end of a string and prints the result.
+
+Example:
+cleanSpace(" hello world ") → "hello world"   */
+function cleanSpace(str) {
+    let withoutSapce = str.trim()
+    console.log(withoutSapce);  
+}
+cleanSpace("  lk    ")
+
+/*Problem- > 25 => Check if Palindrome (Simple)
+Write a function isPalindrome(word) that checks if a word is the same forwards and backwards (case-insensitive).
+
+Use only string methods (no loop!)
+If yes, print "Palindrome"
+If no, print "Not Palindrome"
+Example:
+isPalindrome("madam") → "Palindrome"
+isPalindrome("hello") → "Not Palindrome"
+isPalindrome("Mom") → "Palindrome" ✅   */
+function palindrome(str) {
+    str =str.toLowerCase()
+    let reversed = str.split("").reverse().join("")
+    
+    if (reversed === str) {
+        console.log("Palindrome");
+        
+    }
+    else {
+        console.log("Not Palindrome")
+    }
+}
+palindrome("ata")
