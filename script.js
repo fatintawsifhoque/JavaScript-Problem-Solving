@@ -453,3 +453,67 @@ function palindrome(str) {
     }
 }
 palindrome("ata")
+
+/*Problem- > 26 => Count Vowels (Case-Insensitive)
+Write a function countVowels(str) that counts how many vowels (a, e, i, o, u) are in a string (case-insensitive) and prints the count.
+
+Example:
+countVowels("Hello") → 2
+countVowels("JAVASCRIPT") → 3 */
+function countVowel(str) {
+    str = str.toLowerCase()
+    let count = 0;
+    for (let i = 0; i < str.length; i++){
+        
+        if (str[i] == "a" || str[i] == "e" || str[i] == "i" || str[i] == "o" || str[i] == "u") {
+            count++
+        }
+    }
+    console.log(count);
+}
+countVowel("Hello")
+
+/*Problem- > 27 => Sum of Digits in a Number
+Write a function sumOfDigits(n) that calculates the sum of all digits in a positive integer using a while loop.
+
+Example:
+sumOfDigits(123) → 1 + 2 + 3 = 6
+sumOfDigits(505) → 5 + 0 + 5 = 10  */
+function sumOfDigits(n) {
+    n = n.toString()
+    let sum =0
+    for (let i = 0; i < n.length; i++){
+        
+        sum+=Number(n[i])
+    }
+    console.log(sum);
+}
+sumOfDigits(123)
+
+/*Problem- > 28 => Find the Largest Digit in a Number
+Write a function largestDigit(n) that finds and prints the largest digit in a positive integer.
+
+Example:
+largestDigit(123) → 3
+largestDigit(509) → 9
+largestDigit(7) → 7  */
+function largestDigit(n) {
+    n = n.toString()
+    let largest ="0"
+    for (let i = 0; i < n.length; i++){
+        if (n[i] > largest) {
+            largest =n[i]
+        }
+    }
+    console.log(Number(largest));
+}
+largestDigit(123)
+
+/*Problem- > 29 => Check if Number is Prime
+Write a function isPrime(n) that checks if a number is prime.
+
+If prime, print "Prime"
+Otherwise, print "Not Prime"
+Example:
+isPrime(7) → "Prime"
+isPrime(10) → "Not Prime" */
