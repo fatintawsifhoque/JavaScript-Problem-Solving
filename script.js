@@ -517,3 +517,31 @@ Otherwise, print "Not Prime"
 Example:
 isPrime(7) → "Prime"
 isPrime(10) → "Not Prime" */
+function isPrime(n) {
+    if (n <= 1) {
+        console.log("Not Prime");
+        return;
+    }
+    for (let i = 2; i < n; i++) {
+        if (n % i === 0) {
+            console.log("Not Prime");
+            return;
+        }
+    }
+    console.log("Prime"); 
+}
+isPrime()
+    
+/*Problem- > 30 => Repeat String N Times
+Write a function repeatString(str, n) that prints the string str repeated n times without using .repeat().
+
+Example:
+repeatString("hi", 3) → hihihi  */
+function repeatString(str, n) {
+    let result = ""
+    for (let i = 0; i < n; i++){
+        result +=str
+    }
+    console.log(result);
+}
+repeatString("hi",2)
