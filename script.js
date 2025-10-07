@@ -545,3 +545,76 @@ function repeatString(str, n) {
     console.log(result);
 }
 repeatString("hi",2)
+
+/*Problem- > 31 => Print All Elements
+Write a function printArray(arr) that prints all elements of an array using a for loop.  */
+function printArray(arr) {
+    for (let i = 0; i < arr.length; i++){
+        console.log(arr[i]);
+        
+    }
+}
+printArray([1, 2, 3])
+
+/*Problem- > 32 => Sum of Array Elements
+Write a function sumArray(arr) that calculates and prints the sum of all numbers in an array.
+
+Example:
+sumArray([2, 4, 6]) → 12  */
+function sumArray(arr) {
+   let sum = 0
+    for (let i = 0; i < arr.length; i++){
+        sum +=arr[i]
+    }
+    console.log(sum);
+}
+sumArray([2, 4, 6])
+
+/*Problem- > 33 => Find Largest Number
+Write a function findLargest(arr) that finds and prints the largest number in an array.
+
+Example:
+findLargest([3, 7, 2, 9]) → 9   */
+function findLargest(arr) {
+    if (arr.length === 0) {
+        console.log("Array is empty");
+        return;
+    }
+    let largest = arr[0]; 
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > largest) {
+            largest = arr[i];
+        }
+    }
+    console.log(largest);
+}
+
+findLargest([3, 7, 2, 9]); // 9 ✅
+
+/*Problem- > 34 => Add New Element
+Write a function addElement(arr, newItem) that adds newItem to the end of the array and prints the updated array.
+
+Example:
+addElement([1, 2], 3) → [1, 2, 3]  */
+function addElement(arr, newItem) {
+    arr.push(newItem)
+    console.log(arr);
+}
+addElement([1, 2], 3)
+
+/*Problem- > 35 => Check if Element Exists
+Write a function checkElement(arr, target) that checks if target exists in the array.
+
+If yes, print "Found"
+If no, print "Not Found"  */
+function checkElement(arr, target) {
+    
+    for (let i = 0; i < arr.length; i++){
+        if (arr[i] === target) {
+            console.log("Found");
+            return
+        }
+    }
+    console.log("Not Found");
+}
+checkElement([10, 20, 30], 20)
