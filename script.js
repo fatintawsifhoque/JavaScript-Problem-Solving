@@ -618,3 +618,86 @@ function checkElement(arr, target) {
     console.log("Not Found");
 }
 checkElement([10, 20, 30], 20)
+
+/*Problem- > 36 => Count Even Numbers
+Write a function countEven(arr) that counts how many even numbers are in the array and prints the count.
+
+Example:
+countEven([1, 2, 3, 4, 5]) → 2
+countEven([10, 15, 20]) → 2  */
+function countEven(arr) {
+    let count = 0;
+    for (let i = 0; i < arr.length; i++){
+        if (arr[i] % 2== 0) {
+            count ++
+        }
+    }
+    console.log(count);
+}
+countEven([1, 2, 3, 4, 5])
+
+/*Problem- > 37 => Reverse an Array (Without Built-in Methods)
+Write a function reverseArray(arr) that creates a new array with elements in reverse order and prints it.
+Do not use .reverse().
+
+Example:
+reverseArray([1, 2, 3]) → [3, 2, 1]
+reverseArray(["a", "b", "c"]) → ["c", "b", "a"]   */
+function reverseArray(arr) {
+    let reversedArray=[]
+    for (let i = arr.length - 1; i >= 0; i--){
+        reversedArray.push(arr[i])
+    }
+    console.log(reversedArray);
+}
+reverseArray([1, 2, 3])
+
+/*Problem- > 38 => Find Index of Element
+Write a function findIndex(arr, target) that finds and prints the first index of target in the array.
+
+If not found, print -1.
+Example:
+findIndex([10, 20, 30], 20) → 1
+findIndex([10, 20, 30], 50) → -1   */
+function findIndex(arr, target) {
+    for (let i = 0; i < arr.length; i++){
+        if (arr[i] === target) {
+            console.log(i);
+        }
+    }
+    console.log(-1);
+}
+findIndex([10, 20, 30], 20)
+
+/*Problem- > 39 => Remove Last Element
+Write a function removeLast(arr) that removes the last element from the array and prints the updated array.
+Do not use .pop().
+
+Example:
+removeLast([1, 2, 3]) → [1, 2]
+removeLast(["apple", "banana"]) → ["apple"]   */
+function removeLast(arr) {
+    let updatedArr = [];
+    for (let i = 0; i < arr.length - 1; i++){
+        updatedArr.push(arr[i])
+    }
+    console.log(updatedArr);
+}
+removeLast([1, 2, 3])
+
+/*Problem- > 40 =>Check if Array is Empty
+Write a function isEmpty(arr) that checks if the array is empty.
+
+If empty, print "Empty"
+Otherwise, print "Not Empty"
+Example:
+isEmpty([]) → "Empty"
+isEmpty([1, 2]) → "Not Empty"  */
+function isEmpty(arr) {
+    if (arr.length === 0) {
+        console.log("Empty");
+    } else {
+        console.log("Not Empty");
+    }
+}
+isEmpty([])
