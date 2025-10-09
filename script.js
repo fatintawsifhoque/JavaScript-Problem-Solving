@@ -699,5 +699,87 @@ function isEmpty(arr) {
     } else {
         console.log("Not Empty");
     }
+    
 }
 isEmpty([])
+
+/*Problem- > 41 => Find Smallest Number
+Write a function findSmallest(arr) that finds and prints the smallest number in the array.
+
+Example:
+findSmallest([5, 2, 8, 1]) → 1
+findSmallest([-3, -1, -7]) → -7   */
+function findSmallest(arr) {
+
+    let small = arr[0];
+    for (el of arr) {
+        if (el < small) {
+            small = el;
+        }
+    }
+    console.log(small);
+}
+findSmallest([5, 2, 8, 1])
+
+/*Problem- > 42 => Filter Even Numbers
+Write a function filterEven(arr) that creates a new array with only the even numbers and prints it.
+
+Example:
+filterEven([1, 2, 3, 4, 5]) → [2, 4]
+filterEven([10, 15, 20]) → [10, 20]  */
+function filterEven(arr) {
+    let evenArr = []
+    arr.forEach(el => {
+        if (el % 2 == 0) {
+            evenArr.push(el)
+        }
+    })
+    console.log(evenArr);
+}
+filterEven([10, 11, 12, 13, 14])
+
+/*Problem- > 43 => Check if All Numbers are Positive
+Write a function allPositive(arr) that checks if all numbers in the array are positive.
+
+If yes, print "All Positive"
+Otherwise, print "Not All Positive"
+Example:
+allPositive([1, 2, 3]) → "All Positive"
+allPositive([1, -2, 3]) → "Not All Positive"   */
+function allPositive(arr) {
+    let result = arr.every(el => el > 0)
+    console.log(result?"All positive" :"Not All Positive"); 
+}
+allPositive([1, -2, 3])
+
+/*Problem- > 44 => Join Array Elements into a String
+Write a function joinArray(arr) that joins all elements of the array into a single string (without using .join()) and prints it.
+
+Example:
+joinArray(["a", "b", "c"]) → "abc"
+joinArray([1, 2, 3]) → "123" */
+function joinArray(arr) {
+    let str = ""
+    for (el of arr) {
+        str += el;
+    }
+    console.log(str);
+}
+joinArray([1, 2, 3])
+
+/*Problem- > 45 => Find Duplicate Elements
+Write a function findDuplicates(arr) that finds and prints all duplicate elements in the array.
+
+If no duplicates, print "No Duplicates"
+Example:
+findDuplicates([1, 2, 2, 3, 4, 4]) → [2, 4]
+findDuplicates([1, 2, 3]) → "No Duplicates" */
+function findDuplicates(arr) {
+    const duplicates = arr.filter((item, index) => 
+        arr.indexOf(item) !== index 
+    ).filter((item, index, self) => 
+        self.indexOf(item) === index 
+    );
+    console.log(duplicates.length ? duplicates : "No Duplicates");
+}
+findDuplicates([1, 2, 2, 3, 4, 4])
