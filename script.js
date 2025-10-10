@@ -783,3 +783,73 @@ function findDuplicates(arr) {
     console.log(duplicates.length ? duplicates : "No Duplicates");
 }
 findDuplicates([1, 2, 2, 3, 4, 4])
+
+/*Problem- > 46 => Add to Front and Back
+Write a function addElements(arr, front, back) that:
+
+Adds front to the beginning of the array
+Adds back to the end of the array
+Prints the updated array */
+function addElements(arr, front, back) {
+    arr.unshift(front)
+    arr.push(back) 
+    console.log(arr);
+}
+addElements([2, 3], 1, 4)
+
+/*Problem- > 47 => Remove First and Last
+Write a function removeElements(arr) that:
+
+Removes the first element
+Removes the last element
+Prints the updated array */
+function removeElement(arr) {
+    arr.pop()
+    arr.shift()
+    console.log(arr);
+}
+removeElement([1, 2, 3, 4,])
+
+/*Problem- > 48 => Check and Find
+Write a function checkAndFind(arr, target) that:
+
+Checks if target exists using .includes()
+If yes, prints its index using .indexOf()
+If no, prints "Not Found"*/
+function checkAndFind(arr, target) {
+    if (arr.includes(target)) {
+        console.log(arr.indexOf(target));
+    }
+    else {
+        console.log("Not Found");
+    }
+}
+checkAndFind([10, 20, 30], 20)
+checkAndFind([10, 20, 30], 50)
+
+/*Problem- > 49 => Create Comma-Separated String
+Write a function createString(arr) that joins array elements with commas and prints the string.
+
+Example:
+createString(["apple", "banana", "cherry"]) → "apple,banana,cherry"  */
+function createString(arr) {
+    let newArr = arr.join(",")
+    console.log(newArr);
+}
+createString(["apple", "banana", "cherry"])
+
+/*Problem- > 50 =>Safe Pop
+Write a function safePop(arr) that:
+
+If array is not empty, removes and prints the last element
+If array is empty, prints "Array is empty" */
+function safePop(arr) {
+    if (arr.length == 0) {
+        console.log("Array is empty.");
+    return
+    }
+    let updatedpop = arr.pop()
+    console.log(updatedpop);
+}
+safePop([1, 2, 3])
+safePop([])
