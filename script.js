@@ -853,3 +853,62 @@ function safePop(arr) {
 }
 safePop([1, 2, 3])
 safePop([])
+
+/*Problem- > 51 => Double Each Number
+Write a function doubleNumbers(arr) that uses .map() to return a new array with each number doubled.
+
+Example:
+doubleNumbers([1, 2, 3]) → [2, 4, 6]  */
+function doubleNumbers(arr) {
+    let doubleArr = arr.map(el => el * 2)
+    console.log(doubleArr);
+}
+doubleNumbers([1, 2, 3])
+
+/*Problem- > 52 => Get Positive Numbers
+Write a function getPositives(arr) that uses .filter() to return a new array with only positive numbers.
+
+Example:
+getPositives([-1, 2, -3, 4]) → [2, 4] */
+function getPositive(arr) {
+    let filterArr = arr.filter(el => el > 0)
+    console.log(filterArr);
+}
+getPositive([-1, 2, 3, 4, -5])
+
+/*Problem- > 53 => Sum Using Reduce
+Write a function sumWithReduce(arr) that uses .reduce() to calculate and print the sum of all numbers.
+
+Example:
+sumWithReduce([1, 2, 3]) → 6 */
+function sumWithReduce(arr) {
+    let sum = arr.reduce((acc, cr) => acc + cr, 0)
+    console.log(sum);
+}
+sumWithReduce([1, 2, 3])
+
+/*Problem- > 54 => Extract Middle Elements
+Write a function middleElements(arr) that uses .slice() to return a new array with all elements except the first and last.
+
+Example:
+middleElements([1, 2, 3, 4]) → [2, 3]
+middleElements([10, 20]) → []  */
+function middleElements(arr) {
+    let middleEle = arr.slice(1, arr.length-1)
+    console.log(middleEle);
+}
+middleElements([1, 2, 3, 4])
+
+/*Problem- > 55 => Insert and Remove
+Write a function modifyArray(arr) that:
+
+Uses .splice() to remove the element at index 1
+Then inserts "x" and "y" at index 1
+Prints the updated array
+Example:
+modifyArray([1, 2, 3, 4]) → [1, "x", "y", 3, 4] */
+function modifyArray(arr) {
+    let modifyArr = arr.splice(1,1,"x","y")
+    console.log(arr);
+}
+modifyArray([1,2,3,4])
