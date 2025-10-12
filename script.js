@@ -911,4 +911,65 @@ function modifyArray(arr) {
     let modifyArr = arr.splice(1,1,"x","y")
     console.log(arr);
 }
-modifyArray([1,2,3,4])
+modifyArray([1, 2, 3, 4])
+
+/*Problem- > 56 => Sort Numbers
+Write a function sortNumbers(arr) that sorts an array of numbers in ascending order using .sort().
+
+Example:
+sortNumbers([3, 1, 4, 2]) → [1, 2, 3, 4]  */
+function sortNumbers(arr) {
+    let sortedArr = arr.sort((a,b)=>a-b)
+
+    console.log(sortedArr);
+}
+sortNumbers([3, 1,10,6,60, 4, 2])
+
+/*Problem- > 57 => Flatten Deep Array
+Write a function flattenDeep(arr) that flattens a deeply nested array using .flat(Infinity).
+
+Example:
+flattenDeep([1, [2, [3, [4]]]]) → [1, 2, 3, 4]  */
+function flattenDeep(arr) {
+    let upArr = arr.flat(Infinity)
+    console.log(upArr);
+}
+flattenDeep([1, [2, [3, [4]]]])
+
+/*Problem- > 58 => Check if Any Even
+Write a function hasEven(arr) that uses .some() to check if the array has any even number.
+
+If yes, print "Has Even"
+Otherwise, print "No Even"
+Example:
+hasEven([1, 3, 5]) → "No Even"
+hasEven([1, 2, 3]) → "Has Even"  */
+function hasEven(arr) {
+    if (arr.some(el => el % 2 == 0)) {
+        console.log("Has Even.");
+    }
+    else {
+        console.log("No Even");
+    }
+}
+hasEven([1, 5, 3])
+
+/*Problem- > 59 => Get Last Element Safely
+Write a function getLast(arr) that uses .at(-1) to get the last element.
+
+If array is empty, print "Empty array"
+Example:
+getLast([10, 20, 30]) → 30
+getLast([]) → "Empty array"  */
+function getLast(arr) {
+    if (arr.length === 0) {
+        console.log("Empty array");
+    } else {
+        const last = arr.at(-1);
+        console.log(last);
+    }
+}
+
+
+getLast([10, 20, 30]); // 30 ✅
+getLast([]);           // Empty array ✅
