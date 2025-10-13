@@ -969,7 +969,30 @@ function getLast(arr) {
         console.log(last);
     }
 }
+getLast([10, 20, 30]);
+getLast([]);
 
+/*Problem- > 60 => Swap Two Variables
+Write a function swap(a, b) that swaps two values using array destructuring and returns the swapped values.
 
-getLast([10, 20, 30]); // 30 ✅
-getLast([]);           // Empty array ✅
+Example:
+swap(1, 2) → [2, 1] */
+function swap(a, b) {
+    [a, b] = [b, a];
+    console.log([a, b])
+}
+swap(1, 2)
+
+/*Problem- > 61 => Get First and Rest
+Write a function firstAndRest(arr) that uses destructuring to get the first element and the rest of the array, then prints both.
+
+Example:
+firstAndRest([10, 20, 30]) →
+First: 10
+Rest: [20, 30]  */
+function firstAndRest(arr) {
+    let[first, ...rest] = arr
+    console.log(first);
+    console.log(rest);
+}
+firstAndRest([10,20,30])
