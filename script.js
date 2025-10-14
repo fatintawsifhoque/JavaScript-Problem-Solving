@@ -973,18 +973,14 @@ function skipMiddile(arr) {
   if (arr.length == 0) {
     console.log(newArr);
   } else if (arr.length == 1) {
-     
-    newArr.push(arr[0])
-    newArr.push(arr[0])
-    }
-  else {
-      for (let i = 1; i < arr.length - 1; i++){
-          newArr.push(arr[i])
-      }
-    }
-    console.log(newArr);
+    newArr.push(arr[0]);
+    newArr.push(arr[0]);
+  } else {
+    newArr.push(arr[0]);
+    newArr.push(arr[arr.length - 1]);
+  }
+  console.log(newArr);
 }
-skipMiddile([1, 2, 3, 4, 5])
-skipMiddile(["a"]) 
-skipMiddile([]) 
-
+skipMiddile([1, 2, 3, 4, 5]);
+skipMiddile(["a"]);
+skipMiddile([]);
