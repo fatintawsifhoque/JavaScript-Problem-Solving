@@ -984,3 +984,57 @@ function skipMiddile(arr) {
 skipMiddile([1, 2, 3, 4, 5]);
 skipMiddile(["a"]);
 skipMiddile([]);
+
+/*Problem- > 63 => Find User by ID
+Write a function that takes an array of user objects and an ID.
+
+If a user with that ID exists, print the user object */
+function userID(id) {
+  let users = [
+  {id: 1, name: "Rahim"},
+  {id: 2, name: "Karim"}
+  ];
+  for (user of users) {
+    if (user.id == id) {
+      console.log(user);
+      return
+    }
+  }
+  console.log("User not found");
+}
+userID(2)
+
+/*Problem- > 64 => Safe Array Access
+Write a function that takes an array and an index.
+
+If the index is valid (within the array bounds), print the element at that index
+Otherwise, print "Invalid index" */
+function safeArrayAccess(arr, ind) {
+    if (ind >= 0 && ind < arr.length) {
+        console.log(arr[ind]);
+    } else {
+        console.log("Invalid index");
+    }
+}
+safeArrayAccess([10, 20, 30], 1); 
+safeArrayAccess([10, 20, 30], 5); 
+safeArrayAccess([], 0);        
+safeArrayAccess([10, 20], -1); 
+
+/*Problem- > 65 => Unique Elements
+Write a function that takes an array and returns a new array with only the unique elements */
+function uniqueEle(arr) {
+    let uniqueArr = [];
+    arr.forEach((el) => {
+        if (!uniqueArr.includes(el)) {
+            uniqueArr.push(el);
+        }
+    });
+    console.log(uniqueArr);
+}
+
+
+uniqueEle([1, 2, 2, 3, 4, 4, 5]); 
+uniqueEle(["a", "b", "a"]);     
+uniqueEle([1]);                 
+uniqueEle([]);                   
