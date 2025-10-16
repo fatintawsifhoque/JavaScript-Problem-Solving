@@ -1032,9 +1032,31 @@ function uniqueEle(arr) {
     });
     console.log(uniqueArr);
 }
-
-
 uniqueEle([1, 2, 2, 3, 4, 4, 5]); 
 uniqueEle(["a", "b", "a"]);     
 uniqueEle([1]);                 
-uniqueEle([]);                   
+uniqueEle([]);    
+
+/*Problem- > 66 => Group by Length
+Write a function that takes an array of strings and groups them by their length.
+Return an object where keys are string lengths and values are arrays of strings with that length. */
+function groupByLength(arr) {
+    let result = {};
+    
+    arr.forEach((word) => {
+        let len = word.length;
+        if (result[len]) {
+            result[len].push(word);
+        } else {
+            result[len] = [word];
+        }
+    });
+    
+    console.log(result);
+}
+
+groupByLength(["a", "bb", "ccc", "dd"]); 
+
+groupByLength(["x", "y"]); 
+
+groupByLength(["hello", "hi"]);
