@@ -1054,9 +1054,20 @@ function groupByLength(arr) {
     
     console.log(result);
 }
-
 groupByLength(["a", "bb", "ccc", "dd"]); 
-
 groupByLength(["x", "y"]); 
-
 groupByLength(["hello", "hi"]);
+
+/*Problem- > 67 => Write a function that takes an array of numbers and returns a new array where each number is replaced by "Even" if it's even or "Odd" if it's odd. */
+function arrEvenOdd(arr) {
+    let result = [];
+    arr.forEach(el => {
+        if (el % 2 === 0) {
+            result.push("Even");
+        } else {
+            result.push("Odd");
+        }
+    });
+    return result; 
+}
+console.log(arrEvenOdd([1, 2, 3, 4])); 
