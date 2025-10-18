@@ -1071,3 +1071,25 @@ function arrEvenOdd(arr) {
     return result; 
 }
 console.log(arrEvenOdd([1, 2, 3, 4])); 
+
+/*Problem- > 68 => Write a function that takes a string and returns true if it's a palindrome (reads the same forwards and backwards), otherwise false.
+Ignore case (case-insensitive). */
+function checkPalindrome(str) {
+    str = str.toLowerCase(); // ✅ () যোগ করো
+    let i = 0;
+    let j = str.length - 1;
+    
+    while (i < j) {
+        if (str[i] !== str[j]) {
+            return false; // ✅ মিল না পেলে অমনি থামো
+        }
+        i++;
+        j--;
+    }
+    return true; // ✅ লুপ শেষ হলে প্যালিনড্রোম
+}
+
+console.log(checkPalindrome("Madam"));
+
+
+
