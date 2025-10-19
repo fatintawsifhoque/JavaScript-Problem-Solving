@@ -1091,5 +1091,10 @@ function checkPalindrome(str) {
 
 console.log(checkPalindrome("Madam"));
 
+/*Problem- > 69 => Print Each Word in Uppercase */
 
+function printWordUpperCase(arr) {
+  arr.forEach((el) => { console.log(el.toUpperCase()) })
+}
+printWordUpperCase(["hello", "world"])
 
