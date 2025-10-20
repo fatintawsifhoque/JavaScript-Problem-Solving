@@ -1075,18 +1075,18 @@ console.log(arrEvenOdd([1, 2, 3, 4]));
 /*Problem- > 68 => Write a function that takes a string and returns true if it's a palindrome (reads the same forwards and backwards), otherwise false.
 Ignore case (case-insensitive). */
 function checkPalindrome(str) {
-    str = str.toLowerCase(); // ✅ () যোগ করো
+    str = str.toLowerCase(); 
     let i = 0;
     let j = str.length - 1;
     
     while (i < j) {
         if (str[i] !== str[j]) {
-            return false; // ✅ মিল না পেলে অমনি থামো
+            return false; 
         }
         i++;
         j--;
     }
-    return true; // ✅ লুপ শেষ হলে প্যালিনড্রোম
+    return true; 
 }
 
 console.log(checkPalindrome("Madam"));
@@ -1098,3 +1098,45 @@ function printWordUpperCase(arr) {
 }
 printWordUpperCase(["hello", "world"])
 
+/*Problem- > 70 => Second Largest Number
+Write a function that takes an array of numbers and returns the second largest number.
+
+If there's no second largest, return null. */
+function secondLargest(arr) {
+    if (arr.length < 2) {
+        console.log(null);
+        return;
+    }
+    
+    let largest = -Infinity;
+    let secondLargest = -Infinity;
+    
+    arr.forEach((el) => {
+        if (el > largest) {
+            secondLargest = largest;
+            largest = el;
+        } else if (el < largest && el > secondLargest) {
+            secondLargest = el;
+        }
+    });
+    
+    if (secondLargest === -Infinity) {
+        console.log(null);
+    } else {
+        console.log(secondLargest);
+    }
+}
+
+secondLargest([-1, -2, -3]);
+
+/*Problem- > 71 => Strings Starting with Vowel
+Write a function that takes an array of strings and returns a new array containing only the strings that start with a vowel (a, e, i, o, u), case-insensitive. */
+function stringsStartingWithVowel(arr) {
+  let vowelStrings = arr.filter((el) => {
+   const vowels = "aeiou";
+const firstChar = el.toLowerCase()[0];
+return vowels.includes(firstChar);
+  })
+  console.log(vowelStrings)
+}
+stringsStartingWithVowel(["apple", "banana", "orange"])
