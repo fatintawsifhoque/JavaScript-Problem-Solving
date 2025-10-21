@@ -1140,3 +1140,11 @@ return vowels.includes(firstChar);
   console.log(vowelStrings)
 }
 stringsStartingWithVowel(["apple", "banana", "orange"])
+
+/*Problem- > 72 => Write a function that takes an object and returns the number of properties it has. */
+function numOfPro(obj) {
+  let properties = Object.keys(obj)
+
+  console.log(properties.length)
+}
+numOfPro({name: "Rahim", age: 25})
