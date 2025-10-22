@@ -1147,4 +1147,46 @@ function numOfPro(obj) {
 
   console.log(properties.length)
 }
-numOfPro({name: "Rahim", age: 25})
+numOfPro({ name: "Rahim", age: 25 })
+
+/*Problem- > 73 => Write a function that takes an object and a property name.
+
+If the property exists, print its value
+Otherwise, print "Property not found" */
+function checkProperty(obj, pro) {
+  for (let key in obj) {
+    if ( key == pro) {
+      console.log(obj[key])
+      return
+    }
+    
+  }
+  console.log("Property not found")
+}
+checkProperty({ name: "Rahim", age: 25 }, "height")
+
+/*Problem- > 74 => Write a function that takes an object and returns a new object with all string values converted to uppercase.
+
+Non-string values should remain unchanged. */
+function objUpperCas(obj) {
+  for (let key in obj) {
+    if (typeof (obj[key]) == "string") {
+      obj[key] = obj[key].toUpperCase()
+    }
+  }
+  console.log(obj)
+}
+objUpperCas({ name: "rahim", age: 25, city: "dhaka" })
+
+/*Problem- > 75 => Write a function that takes an array of user objects and returns an array of just their names */
+function namOfArr(arr) {
+  let name = []
+  for (obj of arr) {
+    name.push(obj["name"])
+  }
+  console.log(name)
+}
+namOfArr([
+  {id: 1, name: "Rahim"},
+  {id: 2, name: "Karim"}
+])
