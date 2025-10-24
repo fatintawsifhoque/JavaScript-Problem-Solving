@@ -1190,3 +1190,16 @@ namOfArr([
   {id: 1, name: "Rahim"},
   {id: 2, name: "Karim"}
 ])
+
+/*Problem- > 76 => Check if Object is Empty
+Write a function that takes an object and returns true if it has no properties, otherwise false. */
+function isEmpty(obj) {
+    if (Object.keys(obj).length === 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+console.log(isEmpty({}));
+console.log(isEmpty({name: "Rahim"})); 
