@@ -16,14 +16,42 @@
 </body>
 </html>
 <script>
-    //problem - 77 (DOM)
+    /* problem - 77 (DOM)
+    Change Heading Text
+Write a function that changes the text of the <h1> with id "myHeading" to "Hello, DOM!". */
     document.getElementById('myHeading').textContent = "Hello, DOM!";
 
-//problem - 78 (DOM)
+/* problem - 78 (DOM)
+Button Click Alert
+Write code that shows an alert "Button clicked!" when the button with id "myButton" is clicked.*/
 document.getElementById('myButton').addEventListener('click', ()=>{
     alert("Button clicked!")
 })
 
-//problem - 79 (DOM)
+/* problem - 79 (DOM)
+Change Message Color
+Write a function that changes the color of all elements with class "message" to "red". */
 document.querySelectorAll('.message').forEach((el)=> el.style.color = 'red')
-</script>
+
+
+/* problem - 80 (DOM)
+Add New List Item
+Write a function that adds a new <li> with text "New Item" to the <ul> with id "myList". */
+let newItem = document.createElement('li');
+newItem.textContent = "New Item";
+document.getElementById('myList').appendChild(newItem);
+
+/* problem - 81 (DOM)
+Toggle Visibility
+Write code that hides/shows the <h1> with id "myHeading" every time the button is clicked.
+💡 হিন্ট: Use element.style.display = "none" to hide, and "block" to show.  */
+document.getElementById('myButton').addEventListener('click', () => {
+    let heading = document.getElementById('myHeading');
+    if (heading.style.display === "none") {
+        heading.style.display = "block";
+    } else {
+        heading.style.display = "none";
+    }
+});
+
+    </script>
