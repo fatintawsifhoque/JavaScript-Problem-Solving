@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Validation</title>
+  </head>
+  <body>
+    <form id="myForm">
+      <input type="text" id="name" placeholder="আপনার নাম" />
+      <input type="email" id="email" placeholder="ইমেইল" />
+      <button type="submit">জমা দিন</button>
+    </form>
+    <div id="error"></div>
+    <div id="success"></div>
+
+    <script>
+      let formElm = document.getElementById("myForm");
+      let nameElm = document.getElementById("name");
+      let emailElm = document.getElementById("email");
+
+      formElm.addEventListener("submit", (e) => {
+         e.preventDefault();
+        /* problem => 82 (DOM)
+           Required Field Check
+           Write code that checks if the name field is empty when the form is submitted*/
+            if(nameElm.value.trim() === ""){
+                alert ("নাম লিখুন!")
+                return false
+            }
+      });
+    </script>
+  </body>
+</html>
