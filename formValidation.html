@@ -7,7 +7,10 @@
     <form id="myForm">
       <input type="text" id="name" placeholder="আপনার নাম" />
       <input type="email" id="email" placeholder="ইমেইল" />
+      <input type="password" id="password" placeholder="পাসওয়ার্ড দিন" />
       <button type="submit">জমা দিন</button>
+      <div class="error"></div>
+      <div class="success"></div>
     </form>
     <div id="error"></div>
     <div id="success"></div>
@@ -16,16 +19,64 @@
       let formElm = document.getElementById("myForm");
       let nameElm = document.getElementById("name");
       let emailElm = document.getElementById("email");
+      let passElm = document.getElementById("password");
+      let errorDiv = document.getElementById("error");
+      let successDiv = document.getElementById("success");
 
       formElm.addEventListener("submit", (e) => {
-         e.preventDefault();
+        e.preventDefault();
         /* problem => 82 (DOM)
            Required Field Check
            Write code that checks if the name field is empty when the form is submitted*/
-            if(nameElm.value.trim() === ""){
-                alert ("নাম লিখুন!")
-                return false
-            }
+        if (nameElm.value.trim() === "") {
+          alert("নাম লিখুন!");
+          return false;
+        }
+
+        /* problem => 83 (DOM)
+           Email Validation
+           Write code that validates the email field using a regex.
+           If invalid, show alert "সঠিক ইমেইল লিখুন!" and stop submission.*/
+        let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailElm.value)) {
+          alert("সঠিক ইমেইল লিখুন!");
+          return;
+        }
+
+        /* problem => 84 (DOM)
+           Password Strength
+Add a password field and validate:
+Must be at least 8 characters
+Must contain at least one number*/
+        let passValue = passElm.value;
+        let hasNumber = false;
+
+        for (let char of passValue) {
+          if (!isNaN(char) && char !== " ") {
+            hasNumber = true;
+            break; // একটি সংখ্যা পেলেই থামো
+          }
+        }
+        if (passValue.length < 8 || !hasNumber) {
+          alert(
+            "পাসওয়ার্ড অন্তত ৮ অক্ষরের হতে হবে এবং একটি সংখ্যা থাকতে হবে!"
+          );
+          return;
+        }
+
+        /* problem => 85+ 86 (DOM)
+           Show Error in DOM
+(Instead of alert(), show error messages in the <div id="error"> element.)
+   + 
+  Success Message
+(If all validations pass, show success message in <div id="success">.)*/
+
+        if (isValid) {
+          successDiv.textContent = "ফর্ম সফলভাবে জমা হয়েছে!";
+          successDiv.style.color = "green";
+        } else {
+          errorDiv.style.color = "red";
+        }
       });
     </script>
   </body>
