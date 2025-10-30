@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <button id="btn">লোড করুন</button>
+    
+    <div id="output"></div>
+
+    <script>
+        /* Problem ->88 =>
+        Write code that loads data from https://jsonplaceholder.typicode.com/posts/1 and displays the title in the #output div when the page loads.
+        */
+       fetch("https://jsonplaceholder.typicode.com/posts/1")
+       .then(response =>response.json())
+       .then(data=> {document.getElementById('output').textContent = data.title})
+       .catch(er =>{document.getElementById("output").innerHTML = "ডেটা লোড করতে ব্যর্থ!";
+        })
+    </script>
+</body>
+</html>
