@@ -24,6 +24,21 @@
        .then(data=> {document.getElementById('output').textContent = data.name})
        .catch(er =>{document.getElementById("output").innerHTML = "ডেটা লোড করতে ব্যর্থ!";
         })
+
+        fetch("https://jsonplaceholder.typicode.com/posts/999")
+    .then(response => response.json())
+    .then(data => {
+    
+        if (!data.id) {
+            document.getElementById("output").textContent = "ডেটা পাওয়া যায়নি";
+        } else {
+            document.getElementById("output").textContent = data.title;
+        }
+    })
+    .catch(er => {
+   
+        document.getElementById("output").textContent = "ডেটা লোড করতে ব্যর্থ!";
+    });
     </script>
 </body>
 </html>
