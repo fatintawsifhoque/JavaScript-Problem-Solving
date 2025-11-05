@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Local Storage Practice</title>
+  </head>
+  <body>
+    <input type="text" id="nameInput" placeholder="নাম লিখুন" />
+    <input type="email" id="emailInput" placeholder="ইমেইল লিখুন" />
+    <button id="saveBtn">সেভ করুন</button>
+    <button id="loadBtn">লোড করুন</button>
+    <p id="output"></p>
+
+    <script>
+      document.getElementById("saveBtn").addEventListener("click", () => {
+        let nameInput = document.getElementById("nameInput");
+        let emailInput = document.getElementById("emailInput");
+        let user = {
+          name: nameInput.value,
+          email: emailInput.value
+        };
+        localStorage.setItem("userD", JSON.stringify(user)); 
+      });
+
+      document.getElementById("loadBtn").addEventListener("click", () => {
+        let savedDataStr = localStorage.getItem("userD"); 
+        if (savedDataStr) {
+          let savedData = JSON.parse(savedDataStr); // ✅ JSON পার্স করো
+          document.getElementById("output").textContent = 
+            `Name is ${savedData.name} & email id is ${savedData.email}`; // ✅ ডট নোটেশন
+        } else {
+          document.getElementById("output").textContent = "কোনো নাম এবং ইমেইল সেভ করা নেই!";
+        }
+      });
+    </script>
+  </body>
+</html>
