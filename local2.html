@@ -24,13 +24,22 @@
       document.getElementById("loadBtn").addEventListener("click", () => {
         let savedDataStr = localStorage.getItem("userD"); 
         if (savedDataStr) {
-          let savedData = JSON.parse(savedDataStr); // ✅ JSON পার্স করো
+          let savedData = JSON.parse(savedDataStr); 
           document.getElementById("output").textContent = 
-            `Name is ${savedData.name} & email id is ${savedData.email}`; // ✅ ডট নোটেশন
+            `Name is ${savedData.name} & email id is ${savedData.email}`; 
         } else {
           document.getElementById("output").textContent = "কোনো নাম এবং ইমেইল সেভ করা নেই!";
         }
       });
+      document.addEventListener('DOMContentLoaded', () => {
+    let savedDataStr = localStorage.getItem("userD");
+    if (savedDataStr) {
+        let savedData = JSON.parse(savedDataStr);
+        if (savedData.name) {
+            document.getElementById("output").textContent = savedData.name;
+        }
+    }
+});
     </script>
   </body>
 </html>
