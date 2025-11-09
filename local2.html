@@ -8,6 +8,7 @@
     <input type="email" id="emailInput" placeholder="ইমেইল লিখুন" />
     <button id="saveBtn">সেভ করুন</button>
     <button id="loadBtn">লোড করুন</button>
+    <button id="deleteBtn">ডিলিট করুন</button>
     <p id="output"></p>
 
     <script>
@@ -39,6 +40,12 @@
             document.getElementById("output").textContent = savedData.name;
         }
     }
+});
+document.getElementById("deleteBtn").addEventListener('click', () => {
+
+    document.getElementById("output").textContent = "";
+    
+    localStorage.removeItem("userD");
 });
     </script>
   </body>
