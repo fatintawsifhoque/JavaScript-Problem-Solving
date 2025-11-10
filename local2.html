@@ -47,6 +47,21 @@ document.getElementById("deleteBtn").addEventListener('click', () => {
     
     localStorage.removeItem("userD");
 });
+
+
+let todos = ["পড়াশোনা করো", "বাজার করো", "ঘুমাও"];
+localStorage.setItem("todos", JSON.stringify(todos));
+document.addEventListener("DOMContentLoaded", function() {
+    let todosStr = localStorage.getItem("todos");
+    if (todosStr) {
+        let todos = JSON.parse(todosStr);
+        let output = "";
+        for (let todo of todos) {
+            output += `<p>${todo}</p>`; // প্রতিটি টু-ডু <p> ট্যাগে
+        }
+        document.getElementById("output").innerHTML = output;
+    }
+});
     </script>
   </body>
 </html>
