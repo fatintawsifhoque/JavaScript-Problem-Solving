@@ -26,3 +26,16 @@ async function fe1() {
 }
 
 fe1();
+
+async function loadPost() {
+    try {
+        let response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+        let data = await response.json();
+        console.log(data.title);
+    }
+    catch(err) {
+        console.log("ডেটা লোড করতে ব্যর্থ!");
+    }
+}
+
+loadPost();
