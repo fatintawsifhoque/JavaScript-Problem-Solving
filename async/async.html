@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="output"></p>
+    <button id="btn">CLick Here</button>
+</body>
+<script>
+    let output = document.getElementById("output")
+    let btn = document.getElementById("btn")
+    btn.addEventListener("click", async () => {
+    try {
+        let response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+        let data = await response.json();
+        output.textContent = data.title;
+    }
+    catch(err) {
+        output.textContent = "ডেটা লোড করতে ব্যর্থ!";
+    }
+});
+
+</script>
+</html>
