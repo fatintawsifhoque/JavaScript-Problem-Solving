@@ -991,18 +991,18 @@ Write a function that takes an array of user objects and an ID.
 If a user with that ID exists, print the user object */
 function userID(id) {
   let users = [
-  {id: 1, name: "Rahim"},
-  {id: 2, name: "Karim"}
+    { id: 1, name: "Rahim" },
+    { id: 2, name: "Karim" },
   ];
   for (user of users) {
     if (user.id == id) {
       console.log(user);
-      return
+      return;
     }
   }
   console.log("User not found");
 }
-userID(2)
+userID(2);
 
 /*Problem- > 64 => Safe Array Access
 Write a function that takes an array and an index.
@@ -1010,83 +1010,83 @@ Write a function that takes an array and an index.
 If the index is valid (within the array bounds), print the element at that index
 Otherwise, print "Invalid index" */
 function safeArrayAccess(arr, ind) {
-    if (ind >= 0 && ind < arr.length) {
-        console.log(arr[ind]);
-    } else {
-        console.log("Invalid index");
-    }
+  if (ind >= 0 && ind < arr.length) {
+    console.log(arr[ind]);
+  } else {
+    console.log("Invalid index");
+  }
 }
-safeArrayAccess([10, 20, 30], 1); 
-safeArrayAccess([10, 20, 30], 5); 
-safeArrayAccess([], 0);        
-safeArrayAccess([10, 20], -1); 
+safeArrayAccess([10, 20, 30], 1);
+safeArrayAccess([10, 20, 30], 5);
+safeArrayAccess([], 0);
+safeArrayAccess([10, 20], -1);
 
 /*Problem- > 65 => Unique Elements
 Write a function that takes an array and returns a new array with only the unique elements */
 function uniqueEle(arr) {
-    let uniqueArr = [];
-    arr.forEach((el) => {
-        if (!uniqueArr.includes(el)) {
-            uniqueArr.push(el);
-        }
-    });
-    console.log(uniqueArr);
+  let uniqueArr = [];
+  arr.forEach((el) => {
+    if (!uniqueArr.includes(el)) {
+      uniqueArr.push(el);
+    }
+  });
+  console.log(uniqueArr);
 }
-uniqueEle([1, 2, 2, 3, 4, 4, 5]); 
-uniqueEle(["a", "b", "a"]);     
-uniqueEle([1]);                 
-uniqueEle([]);    
+uniqueEle([1, 2, 2, 3, 4, 4, 5]);
+uniqueEle(["a", "b", "a"]);
+uniqueEle([1]);
+uniqueEle([]);
 
 /*Problem- > 66 => Group by Length
 Write a function that takes an array of strings and groups them by their length.
 Return an object where keys are string lengths and values are arrays of strings with that length. */
 function groupByLength(arr) {
-    let result = {};
-    
-    arr.forEach((word) => {
-        let len = word.length;
-        if (result[len]) {
-            result[len].push(word);
-        } else {
-            result[len] = [word];
-        }
-    });
-    
-    console.log(result);
+  let result = {};
+
+  arr.forEach((word) => {
+    let len = word.length;
+    if (result[len]) {
+      result[len].push(word);
+    } else {
+      result[len] = [word];
+    }
+  });
+
+  console.log(result);
 }
-groupByLength(["a", "bb", "ccc", "dd"]); 
-groupByLength(["x", "y"]); 
+groupByLength(["a", "bb", "ccc", "dd"]);
+groupByLength(["x", "y"]);
 groupByLength(["hello", "hi"]);
 
 /*Problem- > 67 => Write a function that takes an array of numbers and returns a new array where each number is replaced by "Even" if it's even or "Odd" if it's odd. */
 function arrEvenOdd(arr) {
-    let result = [];
-    arr.forEach(el => {
-        if (el % 2 === 0) {
-            result.push("Even");
-        } else {
-            result.push("Odd");
-        }
-    });
-    return result; 
+  let result = [];
+  arr.forEach((el) => {
+    if (el % 2 === 0) {
+      result.push("Even");
+    } else {
+      result.push("Odd");
+    }
+  });
+  return result;
 }
-console.log(arrEvenOdd([1, 2, 3, 4])); 
+console.log(arrEvenOdd([1, 2, 3, 4]));
 
 /*Problem- > 68 => Write a function that takes a string and returns true if it's a palindrome (reads the same forwards and backwards), otherwise false.
 Ignore case (case-insensitive). */
 function checkPalindrome(str) {
-    str = str.toLowerCase(); 
-    let i = 0;
-    let j = str.length - 1;
-    
-    while (i < j) {
-        if (str[i] !== str[j]) {
-            return false; 
-        }
-        i++;
-        j--;
+  str = str.toLowerCase();
+  let i = 0;
+  let j = str.length - 1;
+
+  while (i < j) {
+    if (str[i] !== str[j]) {
+      return false;
     }
-    return true; 
+    i++;
+    j--;
+  }
+  return true;
 }
 
 console.log(checkPalindrome("Madam"));
@@ -1094,37 +1094,39 @@ console.log(checkPalindrome("Madam"));
 /*Problem- > 69 => Print Each Word in Uppercase */
 
 function printWordUpperCase(arr) {
-  arr.forEach((el) => { console.log(el.toUpperCase()) })
+  arr.forEach((el) => {
+    console.log(el.toUpperCase());
+  });
 }
-printWordUpperCase(["hello", "world"])
+printWordUpperCase(["hello", "world"]);
 
 /*Problem- > 70 => Second Largest Number
 Write a function that takes an array of numbers and returns the second largest number.
 
 If there's no second largest, return null. */
 function secondLargest(arr) {
-    if (arr.length < 2) {
-        console.log(null);
-        return;
+  if (arr.length < 2) {
+    console.log(null);
+    return;
+  }
+
+  let largest = -Infinity;
+  let secondLargest = -Infinity;
+
+  arr.forEach((el) => {
+    if (el > largest) {
+      secondLargest = largest;
+      largest = el;
+    } else if (el < largest && el > secondLargest) {
+      secondLargest = el;
     }
-    
-    let largest = -Infinity;
-    let secondLargest = -Infinity;
-    
-    arr.forEach((el) => {
-        if (el > largest) {
-            secondLargest = largest;
-            largest = el;
-        } else if (el < largest && el > secondLargest) {
-            secondLargest = el;
-        }
-    });
-    
-    if (secondLargest === -Infinity) {
-        console.log(null);
-    } else {
-        console.log(secondLargest);
-    }
+  });
+
+  if (secondLargest === -Infinity) {
+    console.log(null);
+  } else {
+    console.log(secondLargest);
+  }
 }
 
 secondLargest([-1, -2, -3]);
@@ -1133,21 +1135,21 @@ secondLargest([-1, -2, -3]);
 Write a function that takes an array of strings and returns a new array containing only the strings that start with a vowel (a, e, i, o, u), case-insensitive. */
 function stringsStartingWithVowel(arr) {
   let vowelStrings = arr.filter((el) => {
-   const vowels = "aeiou";
-const firstChar = el.toLowerCase()[0];
-return vowels.includes(firstChar);
-  })
-  console.log(vowelStrings)
+    const vowels = "aeiou";
+    const firstChar = el.toLowerCase()[0];
+    return vowels.includes(firstChar);
+  });
+  console.log(vowelStrings);
 }
-stringsStartingWithVowel(["apple", "banana", "orange"])
+stringsStartingWithVowel(["apple", "banana", "orange"]);
 
 /*Problem- > 72 => Write a function that takes an object and returns the number of properties it has. */
 function numOfPro(obj) {
-  let properties = Object.keys(obj)
+  let properties = Object.keys(obj);
 
-  console.log(properties.length)
+  console.log(properties.length);
 }
-numOfPro({ name: "Rahim", age: 25 })
+numOfPro({ name: "Rahim", age: 25 });
 
 /*Problem- > 73 => Write a function that takes an object and a property name.
 
@@ -1155,51 +1157,64 @@ If the property exists, print its value
 Otherwise, print "Property not found" */
 function checkProperty(obj, pro) {
   for (let key in obj) {
-    if ( key == pro) {
-      console.log(obj[key])
-      return
+    if (key == pro) {
+      console.log(obj[key]);
+      return;
     }
-    
   }
-  console.log("Property not found")
+  console.log("Property not found");
 }
-checkProperty({ name: "Rahim", age: 25 }, "height")
+checkProperty({ name: "Rahim", age: 25 }, "height");
 
 /*Problem- > 74 => Write a function that takes an object and returns a new object with all string values converted to uppercase.
 
 Non-string values should remain unchanged. */
 function objUpperCas(obj) {
   for (let key in obj) {
-    if (typeof (obj[key]) == "string") {
-      obj[key] = obj[key].toUpperCase()
+    if (typeof obj[key] == "string") {
+      obj[key] = obj[key].toUpperCase();
     }
   }
-  console.log(obj)
+  console.log(obj);
 }
-objUpperCas({ name: "rahim", age: 25, city: "dhaka" })
+objUpperCas({ name: "rahim", age: 25, city: "dhaka" });
 
 /*Problem- > 75 => Write a function that takes an array of user objects and returns an array of just their names */
 function namOfArr(arr) {
-  let name = []
+  let name = [];
   for (obj of arr) {
-    name.push(obj["name"])
+    name.push(obj["name"]);
   }
-  console.log(name)
+  console.log(name);
 }
 namOfArr([
-  {id: 1, name: "Rahim"},
-  {id: 2, name: "Karim"}
-])
+  { id: 1, name: "Rahim" },
+  { id: 2, name: "Karim" },
+]);
 
 /*Problem- > 76 => Check if Object is Empty
 Write a function that takes an object and returns true if it has no properties, otherwise false. */
 function isEmpty(obj) {
-    if (Object.keys(obj).length === 0) {
-        return true;
-    } else {
-        return false;
-    }
+  if (Object.keys(obj).length === 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 console.log(isEmpty({}));
-console.log(isEmpty({name: "Rahim"})); 
+console.log(isEmpty({ name: "Rahim" }));
+
+//Find Missing Number
+
+function findmissingNum(arr) {
+  let missingNum;
+    for (let i = 1; i <= arr.length + 1; i++) {
+        if (!arr.includes(i)) {
+            missingNum = i;
+            break; 
+        }
+    }
+  console.log(missingNum)
+}
+findmissingNum([1, 2, 4, 5])
