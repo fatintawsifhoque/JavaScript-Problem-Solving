@@ -1218,3 +1218,19 @@ function findmissingNum(arr) {
   console.log(missingNum)
 }
 findmissingNum([1, 2, 4, 5])
+
+/*
+
+Find Common Elements
+Write a function that takes two arrays and returns a new array containing only the elements that appear in both arrays. */
+
+function findCommon(arr1, arr2) {
+  let common = [];
+  arr1.forEach((el) => {
+    if (arr2.includes(el)) {
+      common.push(el)
+    }
+  });
+console.log(common)
+}
+findCommon([1, 2, 3], [2, 3, 4])
