@@ -1234,3 +1234,18 @@ function findCommon(arr1, arr2) {
 console.log(common)
 }
 findCommon([1, 2, 3], [2, 3, 4])
+
+/*
+Remove Duplicates
+Write a function that takes an array and returns a new array with all duplicate elements removed (keep only the first occurrence).
+*/
+function removeDuplicats(arr) {
+    let pureArr = [];
+    arr.forEach(el => {
+        if (!pureArr.includes(el)) {
+            pureArr.push(el);
+        }
+    });
+    console.log(pureArr);
+}
+removeDuplicats([1, 2, 2, 3, 4, 4, 5])
