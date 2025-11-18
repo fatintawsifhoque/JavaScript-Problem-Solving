@@ -1249,3 +1249,18 @@ function removeDuplicats(arr) {
     console.log(pureArr);
 }
 removeDuplicats([1, 2, 2, 3, 4, 4, 5])
+
+
+function chunkArray(arr, size) {
+    let result = [];
+    for (let i = 0; i < arr.length; i += size) {
+        let chunk = arr.slice(i, i + size);
+        result.push(chunk);
+    }
+    return result;
+}
+
+console.log(chunkArray([1, 2, 3, 4, 5], 2)); 
+
+
+console.log(chunkArray(["a", "b", "c", "d"], 3)); 
