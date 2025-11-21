@@ -1264,3 +1264,34 @@ console.log(chunkArray([1, 2, 3, 4, 5], 2));
 
 
 console.log(chunkArray(["a", "b", "c", "d"], 3)); 
+
+/*
+Array Rotation
+Write a function that takes an array and a number k, and returns a new array where the elements are rotated to the right by k positions.
+*/
+function ArrayRotation(arr, k) {
+    if (arr.length === 0) {
+        console.log([]);
+        return;
+    }
+    
+    k = k % arr.length; 
+    let rotateArray = [];
+    
+    
+    for (let i = arr.length - k; i < arr.length; i++) {
+        rotateArray.push(arr[i]);
+    }
+    
+   
+    for (let i = 0; i < arr.length - k; i++) {
+        rotateArray.push(arr[i]);
+    }
+    
+    console.log(rotateArray);
+}
+
+
+ArrayRotation([1, 2, 3, 4, 5], 2); 
+ArrayRotation(["a", "b", "c"], 1); 
+ArrayRotation([1, 2, 3], 5);
