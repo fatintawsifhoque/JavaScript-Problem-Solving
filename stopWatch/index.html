@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>StopWatch App</title>
+    <style>
+        body { font-family: Arial; text-align: center; margin-top: 50px; }
+        #display { font-size: 2.5em; margin: 20px; }
+        input { padding: 8px; font-size: 1em; margin: 5px; }
+        button { padding: 10px 15px; margin: 5px; font-size: 1em; }
+    </style>
+</head>
+<body>
+    <h1>⏱️ StopWatch App</h1>
+    
+    <div id="display">00:00:00</div>
+    
+    <input type="text" id="timeInput" placeholder="00:00:00">
+    <button id="setBtn">Set</button>
+    <br>
+    <button id="startBtn">Start</button>
+    <button id="pauseBtn">Stop</button>
+    <button id="resetBtn">Reset</button>
+
+    <script>
+       // ভেরিয়েবল ডিক্লেয়ার
+let timer;
+let totalSeconds = 0;
+let isRunning = false;
+
+// DOM এলিমেন্ট সিলেক্ট
+const display = document.getElementById("display");
+const timeInput = document.getElementById("timeInput");
+const setBtn = document.getElementById("setBtn");
+const startBtn = document.getElementById("startBtn");
+const pauseBtn = document.getElementById("pauseBtn");
+const resetBtn = document.getElementById("resetBtn");
+
+// পেজ লোড হলে ডেটা লোড করো
+document.addEventListener("DOMContentLoaded", () => {
+    loadFromStorage();
+    updateDisplay();
+    setupEventListeners();
+});
+
+// ইভেন্ট লিসেনার সেট করো
+function setupEventListeners() {
+    setBtn.addEventListener("click", setTimer);
+    startBtn.addEventListener("click", startTimer);
+    pauseBtn.addEventListener("click", pauseTimer);
+    resetBtn.addEventListener("click", resetTimer);
+}
+
+// ডিসপ্লে আপডেট করো
+function updateDisplay() {
+    let hours = Math.floor(totalSeconds / 3600);
+    let minutes = Math.floor((totalSeconds % 3600) / 60);
+    let seconds = totalSeconds % 60;
+    
+    display.textContent = 
+        `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    
+    // সময় শেষ হলে
+    if (totalSeconds <= 0) {
+        clearInterval(timer);
+        isRunning = false;
+        alert("⏱️ সময় শেষ!");
+        saveToStorage();
+        return;
+    }
+    
+    saveToStorage();
+}
+
+// টাইমার শুরু করো
+function startTimer() {
+    if (isRunning) return;
+    if (totalSeconds <= 0) {
+        alert("প্রথমে একটি সময় সেট করুন!");
+        return;
+    }
+    
+    isRunning = true;
+    timer = setInterval(() => {
+        totalSeconds--;
+        updateDisplay();
+    }, 1000);
+}
+
+// টাইমার থামাও
+function pauseTimer() {
+    if (!isRunning) return;
+    clearInterval(timer);
+    isRunning = false;
+    saveToStorage();
+}
+
+// টাইমার রিসেট করো
+function resetTimer() {
+    clearInterval(timer);
+    totalSeconds = 0;
+    isRunning = false;
+    updateDisplay();
+    localStorage.removeItem("stopwatch");
+}
+
+// সময় সেট করো
+function setTimer() {
+    const input = timeInput.value.trim();
+    if (!input) {
+        alert("অনুগ্রহ করে একটি সময় লিখুন (HH:MM:SS ফরম্যাটে)");
+        return;
+    }
+    
+    const parts = input.split(':');
+    if (parts.length !== 3) {
+        alert("ফরম্যাট ভুল! উদাহরণ: 00:25:30");
+        return;
+    }
+    
+    const [h, m, s] = parts.map(Number);
+    if (isNaN(h) || isNaN(m) || isNaN(s) || h < 0 || m < 0 || s < 0) {
+        alert("অবৈধ সময়!");
+        return;
+    }
+    
+    totalSeconds = h * 3600 + m * 60 + s;
+    isRunning = false;
+    clearInterval(timer);
+    updateDisplay();
+}
+
+// লোকাল স্টোরেজে সেভ করো
+function saveToStorage() {
+    localStorage.setItem("stopwatch", JSON.stringify({
+        totalSeconds: totalSeconds,
+        isRunning: isRunning
+    }));
+}
+
+// লোকাল স্টোরেজ থেকে লোড করো
+function loadFromStorage() {
+    const data = localStorage.getItem("stopwatch");
+    if (data) {
+        const saved = JSON.parse(data);
+        totalSeconds = saved.totalSeconds;
+        isRunning = saved.isRunning;
+        
+        if (isRunning && totalSeconds > 0) {
+            timer = setInterval(() => {
+                totalSeconds--;
+                updateDisplay();
+            }, 1000);
+        }
+    }
+}
+    </script>
+</body>
+</html>
