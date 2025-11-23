@@ -1295,3 +1295,11 @@ function ArrayRotation(arr, k) {
 ArrayRotation([1, 2, 3, 4, 5], 2); 
 ArrayRotation(["a", "b", "c"], 1); 
 ArrayRotation([1, 2, 3], 5);
+
+
+
+
+const introduce = (name, age) => {
+  return `My name is ${name}, age ${age} `
+}
+console.log(introduce("Fatin", 22))
