@@ -1303,3 +1303,11 @@ const introduce = (name, age) => {
   return `My name is ${name}, age ${age} `
 }
 console.log(introduce("Fatin", 22))
+
+
+
+
+
+let { name, age } = { name: "Rahim", age: 25 }
+console.log(`name:${name}`)
+console.log(`age: ${age}`)
