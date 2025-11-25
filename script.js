@@ -1305,9 +1305,12 @@ const introduce = (name, age) => {
 console.log(introduce("Fatin", 22))
 
 
-
-
-
 let { name, age } = { name: "Rahim", age: 25 }
 console.log(`name:${name}`)
 console.log(`age: ${age}`)
+
+function spreadpr(arr1, arr2){
+  let newArr = [...arr1, ...arr2]
+  console.log(newArr)
+}
+spreadpr([123],[12])
