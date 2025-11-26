@@ -1314,3 +1314,9 @@ function spreadpr(arr1, arr2){
   console.log(newArr)
 }
 spreadpr([123],[12])
+
+function defaultParamiter(guestName = "Guest") {
+    return `Hello ${guestName}!`;
+}
+
+console.log(defaultParamiter("Fatiin")); 
