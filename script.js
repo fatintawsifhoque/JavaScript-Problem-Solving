@@ -1320,3 +1320,9 @@ function defaultParamiter(guestName = "Guest") {
 }
 
 console.log(defaultParamiter("Fatiin")); 
+
+function safe() {
+  let user = { name: "Rahim", address: { city: "Dhaka" } }
+  console.log(user?.address?.city)
+}
+safe()
