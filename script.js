@@ -1326,3 +1326,14 @@ function safe() {
   console.log(user?.address?.city)
 }
 safe()
+
+function largestNum(arr) {
+  let largest = arr[0]
+  arr.forEach((el) => {
+    if (el > largest) {
+      largest=el
+    }
+  })
+  console.log(largest)
+}
+largestNum([3, 7, 2, 9])
