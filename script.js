@@ -1337,3 +1337,15 @@ function largestNum(arr) {
   console.log(largest)
 }
 largestNum([3, 7, 2, 9])
+
+function removeDuplicates(arr) {
+  let updatedArr = [];
+  arr.forEach((el) => {
+    if (!updatedArr.includes(el)) { 
+      updatedArr.push(el);
+    }
+  });
+  return updatedArr; 
+}
+
+console.log(removeDuplicates([1, 2, 2, 3, "a", "a"])); 
