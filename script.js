@@ -1360,3 +1360,9 @@ function getEvenNumbers(arr) {
   console.log(filterArr)
 }
 getEvenNumbers([1, 2, 3, 4, 5, 6])
+
+function reverseArray(arr) {
+  let reversed = arr.toReversed()
+  console.log(reversed)
+}
+reverseArray([1, 2, 3])
