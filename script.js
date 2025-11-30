@@ -1349,3 +1349,14 @@ function removeDuplicates(arr) {
 }
 
 console.log(removeDuplicates([1, 2, 2, 3, "a", "a"])); 
+
+function getEvenNumbers(arr) {
+  let filterArr = []
+  arr.forEach((el) => {
+    if (el % 2 == 0) {
+      filterArr.push(el)
+    }
+  })
+  console.log(filterArr)
+}
+getEvenNumbers([1, 2, 3, 4, 5, 6])
