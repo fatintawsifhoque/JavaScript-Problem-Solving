@@ -1366,3 +1366,11 @@ function reverseArray(arr) {
   console.log(reversed)
 }
 reverseArray([1, 2, 3])
+
+function pluck(arr, key) {
+  let result = [];
+  arr.forEach(obj => {
+    result.push(obj[key]);
+  });
+  return result;
+}
