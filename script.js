@@ -1374,3 +1374,11 @@ function pluck(arr, key) {
   });
   return result;
 }
+function sumArray(arr) {
+  let sum = 0
+  arr.forEach((el) => {
+    sum+=el
+  })
+  return sum
+}
+console.log(sumArray([1, 2, 3, 4]))
