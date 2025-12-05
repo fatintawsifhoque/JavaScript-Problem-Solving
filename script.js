@@ -1382,3 +1382,15 @@ function sumArray(arr) {
   return sum
 }
 console.log(sumArray([1, 2, 3, 4]))
+
+function hasEven(arr) {
+  let update = false
+  arr.forEach((el) => {
+    if (el % 2 == 0) {
+      update = true
+    }
+
+  })
+  return update
+}
+console.log(hasEven([1, 2, 5]))
