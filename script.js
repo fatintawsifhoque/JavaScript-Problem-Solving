@@ -1394,3 +1394,15 @@ function hasEven(arr) {
   return update
 }
 console.log(hasEven([1, 2, 5]))
+
+function findFirstEven(arr) {
+  for (const el of arr) {
+    if (el % 2 === 0) {
+      return el;
+    }
+  }
+  return null; 
+}
+
+console.log(findFirstEven([1, 3, 4, 5])); 
+console.log(findFirstEven([1, 3, 5]));   
