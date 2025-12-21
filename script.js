@@ -1406,3 +1406,13 @@ function findFirstEven(arr) {
 
 console.log(findFirstEven([1, 3, 4, 5])); 
 console.log(findFirstEven([1, 3, 5]));   
+
+function isEmpty(arr) {
+  if (arr.length <= 0) {
+    return true
+  }
+  else {
+    return false
+  }
+}
+console.log(isEmpty([]))
