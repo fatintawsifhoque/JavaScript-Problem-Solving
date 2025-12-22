@@ -1416,3 +1416,10 @@ function isEmpty(arr) {
   }
 }
 console.log(isEmpty([]))
+
+function first(arr){
+  if (arr.length !== 0) {
+    return arr[0]
+  }
+}
+console.log(first([10,20,30]))
