@@ -1422,4 +1422,9 @@ function first(arr){
     return arr[0]
   }
 }
-console.log(first([10,20,30]))
+console.log(first([10, 20, 30]))
+
+function last(arr) {
+  return arr[arr.length-1]
+} 
+console.log(last([10,20,30]))
