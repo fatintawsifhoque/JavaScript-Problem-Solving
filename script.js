@@ -1428,3 +1428,8 @@ function last(arr) {
   return arr[arr.length-1]
 } 
 console.log(last([10,20,30]))
+
+function size(arr) {
+  return arr.length
+}
+console.log(size([1,2,3]))
