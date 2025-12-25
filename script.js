@@ -1433,3 +1433,8 @@ function size(arr) {
   return arr.length
 }
 console.log(size([1,2,3]))
+
+function positivesOnly(arr){
+  return arr.filter((el)=> el>0)
+}
+console.log(positivesOnly([-1,2,3,4,5]))
