@@ -1438,3 +1438,10 @@ function positivesOnly(arr){
   return arr.filter((el)=> el>0)
 }
 console.log(positivesOnly([-1,2,3,4,5]))
+
+function duplicate(arr) {
+  let main = [...arr]
+  
+  return main
+}
+console.log(duplicate([1,2,2,3]))
