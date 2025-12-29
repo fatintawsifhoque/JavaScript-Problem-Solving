@@ -1445,3 +1445,18 @@ function duplicate(arr) {
   return main
 }
 console.log(duplicate([1,2,2,3]))
+
+function hasItems(arr) {
+  if (arr.length) {
+    return true
+  }
+  else {
+    return false
+  }
+}
+console.log(hasItems([1]))
+
+function allEven(arr) {
+  return arr.every(el => el % 2 === 0);
+}
+console.log(allEven([2,4,3,64]))
