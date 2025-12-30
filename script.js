@@ -1460,3 +1460,13 @@ function allEven(arr) {
   return arr.every(el => el % 2 === 0);
 }
 console.log(allEven([2,4,3,64]))
+
+function removeZeros(arr) {
+  return arr.filter(el => el !== 0);
+}
+console.log(removeZeros([1, 2, 0, 3, 0, 4]))
+
+function flip(arr) {
+  return arr.reverse()
+}
+console.log(flip([1,2,3]))
