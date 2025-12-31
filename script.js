@@ -1469,4 +1469,18 @@ console.log(removeZeros([1, 2, 0, 3, 0, 4]))
 function flip(arr) {
   return arr.reverse()
 }
-console.log(flip([1,2,3]))
+console.log(flip([1, 2, 3]))
+
+function indexOfMax(arr){
+  let max = arr[0]
+  let ind = 0
+  for (let i = 0; i < arr.length; i++){
+    if (arr[i] > max) {
+      max = arr[i]
+      ind = i
+    }
+  }
+  return ind
+ 
+}
+console.log(indexOfMax([10,20,30,11]))
