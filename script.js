@@ -1484,3 +1484,8 @@ function indexOfMax(arr){
  
 }
 console.log(indexOfMax([10,20,30,11]))
+
+function mergeUnique(arr1, arr2) {
+  return [...new Set([...arr1, ...arr2])];
+}
+console.log(mergeUnique([1,2,3],[1,2,3,4]))
