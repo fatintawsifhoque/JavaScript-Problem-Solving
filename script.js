@@ -1489,3 +1489,10 @@ function mergeUnique(arr1, arr2) {
   return [...new Set([...arr1, ...arr2])];
 }
 console.log(mergeUnique([1,2,3],[1,2,3,4]))
+
+function product(arr) {
+  let multiple = 1
+  arr.forEach(el => multiple *= el)
+  return multiple
+}
+console.log(product([2, 3, 4]))
