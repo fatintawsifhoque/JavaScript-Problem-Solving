@@ -1495,4 +1495,10 @@ function product(arr) {
   arr.forEach(el => multiple *= el)
   return multiple
 }
-console.log(product([2, 3, 4]))
+console.log(product([2, 3, 4])) 
+
+function uniqueInOrder(arr) {
+  let uni = [...new Set(arr)]
+  return uni
+}
+console.log(uniqueInOrder([1, 2, 2, 3, 1]))
