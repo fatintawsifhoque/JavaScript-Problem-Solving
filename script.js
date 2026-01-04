@@ -1502,3 +1502,8 @@ function uniqueInOrder(arr) {
   return uni
 }
 console.log(uniqueInOrder([1, 2, 2, 3, 1]))
+
+function removeAll(arr, value) {
+  return arr.filter((el)=> el !== value)
+}
+console.log(removeAll([1, 2, 2, 3], 2))
