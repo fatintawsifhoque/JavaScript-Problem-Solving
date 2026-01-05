@@ -1511,3 +1511,14 @@ console.log(removeAll([1, 2, 2, 3], 2))
 function onlyNumbers(arr) {
   return arr.filter((el)=> typeof el === 'number')
 }console.log(onlyNumbers([1, "hello", 2, true, 3.5]))
+
+function minMax(arr) {
+  let max = Math.max(...arr)
+  let min = Math.min(...arr)
+  let obj = {
+    Max: max,
+    Min:min
+  }
+  return obj
+}
+console.log(minMax([3, 1, 4, 1, 5]))
