@@ -1507,3 +1507,7 @@ function removeAll(arr, value) {
   return arr.filter((el)=> el !== value)
 }
 console.log(removeAll([1, 2, 2, 3], 2))
+
+function onlyNumbers(arr) {
+  return arr.filter((el)=> typeof el === 'number')
+}console.log(onlyNumbers([1, "hello", 2, true, 3.5]))
