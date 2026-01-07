@@ -1522,3 +1522,10 @@ function minMax(arr) {
   return obj
 }
 console.log(minMax([3, 1, 4, 1, 5]))
+
+function uniqueFromEnd(arr) {
+  const reversed = [...arr].reverse();
+  const uniqueReversed = [...new Set(reversed)];
+  return uniqueReversed.reverse();
+}
+console.log(uniqueFromEnd([1, 2, 3, 2, 1]))
