@@ -1529,3 +1529,13 @@ function uniqueFromEnd(arr) {
   return uniqueReversed.reverse();
 }
 console.log(uniqueFromEnd([1, 2, 3, 2, 1]))
+
+function sorted(arr) {
+  return arr.toSorted(function(a, b){return a - b})
+}
+console.log(sorted([1, 2, 3, 30, 10, 20]))
+
+function take(arr, n) {
+  return arr.slice(0,n)
+}
+console.log(take([1, 2, 3, 4], 2))
