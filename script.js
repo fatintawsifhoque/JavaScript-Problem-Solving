@@ -1539,3 +1539,8 @@ function take(arr, n) {
   return arr.slice(0,n)
 }
 console.log(take([1, 2, 3, 4], 2))
+
+function onlyStrings(arr) {
+  return arr.filter((el)=>typeof el == "string")
+}
+console.log(onlyStrings([1, "hello", true, "world"]))
