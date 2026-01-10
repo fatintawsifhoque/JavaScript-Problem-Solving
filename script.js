@@ -1544,3 +1544,10 @@ function onlyStrings(arr) {
   return arr.filter((el)=>typeof el == "string")
 }
 console.log(onlyStrings([1, "hello", true, "world"]))
+
+function compact(arr) {
+  let com = []
+  arr.forEach(el => { if (el) { com.push(el) } })
+  return com
+}
+console.log(compact([0, 1, false, 2, ""]))
