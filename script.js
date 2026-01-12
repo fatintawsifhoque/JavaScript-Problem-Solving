@@ -1555,3 +1555,6 @@ console.log(compact([0, 1, false, 2, ""]))
 
 const average = (arr) => arr.length === 0 ? 0 : arr.reduce((a, b) => a + b, 0) / arr.length;
 console.log(average([1, 2, 3]))
+
+const nonZeroNumbers = (arr) => arr.filter(el => typeof el === "number" && el !== 0)
+console.log(nonZeroNumbers([0, 1, "2", 3]))
