@@ -1558,3 +1558,6 @@ console.log(average([1, 2, 3]))
 
 const nonZeroNumbers = (arr) => arr.filter(el => typeof el === "number" && el !== 0)
 console.log(nonZeroNumbers([0, 1, "2", 3]))
+
+const findTruthy = (arr) => arr.filter(el => el)
+console.log(findTruthy([0, null, 2]))
