@@ -1561,3 +1561,10 @@ console.log(nonZeroNumbers([0, 1, "2", 3]))
 
 const findTruthy = (arr) => arr.filter(el => el)
 console.log(findTruthy([0, null, 2]))
+
+const uniqueOnly = (arr) => {
+  const freq = new Map();
+  arr.forEach(el => freq.set(el, (freq.get(el) || 0) + 1));
+  return arr.filter(el => freq.get(el) === 1);
+};
+console.log(uniqueOnly([1, 2, 2, 3]))
