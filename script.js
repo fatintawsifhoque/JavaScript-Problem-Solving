@@ -1568,3 +1568,8 @@ const uniqueOnly = (arr) => {
   return arr.filter(el => freq.get(el) === 1);
 };
 console.log(uniqueOnly([1, 2, 2, 3]))
+
+function pluck(arr, key) {
+  return arr.map(obj => obj[key]);
+}
+console.log(pluck([{name:"A"},{name:"B"}], "name"))
