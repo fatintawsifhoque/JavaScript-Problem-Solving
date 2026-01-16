@@ -1573,3 +1573,9 @@ function pluck(arr, key) {
   return arr.map(obj => obj[key]);
 }
 console.log(pluck([{name:"A"},{name:"B"}], "name"))
+
+function hasKey(obj, key) {
+ return Object.hasOwn(obj, key)
+}
+console.log(hasKey({ name: "Fatin" }, "name"))
+console.log(hasKey({name: "Fatin"}, "age"))
