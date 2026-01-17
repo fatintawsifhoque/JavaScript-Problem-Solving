@@ -1578,4 +1578,13 @@ function hasKey(obj, key) {
  return Object.hasOwn(obj, key)
 }
 console.log(hasKey({ name: "Fatin" }, "name"))
-console.log(hasKey({name: "Fatin"}, "age"))
+console.log(hasKey({ name: "Fatin" }, "age"))
+
+function getKeys(obj) {
+  let keys =[]
+  for (key in obj) {
+    keys.push(key)
+  }
+  return keys
+}
+console.log(getKeys({a: 1, b: 2}))
