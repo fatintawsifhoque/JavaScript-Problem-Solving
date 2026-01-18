@@ -1588,3 +1588,8 @@ function getKeys(obj) {
   return keys
 }
 console.log(getKeys({a: 1, b: 2}))
+
+function getValues(obj){
+  return Object.values(obj)
+}
+console.log(getValues({a: 1, b: 2}))
