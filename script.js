@@ -1598,3 +1598,8 @@ function copyObj(obj) {
   return {...obj}
 }
 console.log(copyObj({name: "Fatin"}))
+
+function countProps(obj) {
+  return Object.values(obj).length
+}
+console.log(countProps({a: 1, b: 2, c: 3}))
