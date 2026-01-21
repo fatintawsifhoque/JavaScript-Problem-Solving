@@ -1603,3 +1603,9 @@ function countProps(obj) {
   return Object.values(obj).length
 }
 console.log(countProps({a: 1, b: 2, c: 3}))
+
+function mergeObjects(obj1, obj2){
+  let merged = { ...obj1, ...obj2 }
+  return merged
+}
+console.log(mergeObjects({a: 1, b: 2}, {b: 3, c: 4}))
