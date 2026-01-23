@@ -1614,4 +1614,9 @@ function omit(obj, key) {
   const { [key]: _, ...rest } = obj;
   return rest;
 }
-console.log(omit({a: 1, b: 2, c: 3}, "b"))
+console.log(omit({ a: 1, b: 2, c: 3 }, "b"))
+
+function copyObj(obj) {
+  return {...obj}
+}
+console.log(copyObj({name: "Fatin"}))
