@@ -1619,4 +1619,7 @@ console.log(omit({ a: 1, b: 2, c: 3 }, "b"))
 function copyObj(obj) {
   return {...obj}
 }
-console.log(copyObj({name: "Fatin"}))
+console.log(copyObj({ name: "Fatin" }))
+
+const hasTruthyValue = (obj) => Object.values(obj).some(Boolean);
+console.log(hasTruthyValue({a: 0, b: false}))
