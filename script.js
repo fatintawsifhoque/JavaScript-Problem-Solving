@@ -1623,3 +1623,14 @@ console.log(copyObj({ name: "Fatin" }))
 
 const hasTruthyValue = (obj) => Object.values(obj).some(Boolean);
 console.log(hasTruthyValue({a: 0, b: false}))
+
+function pick(obj, keys) {
+  const result = {};
+  for (const key of keys) {
+    if (key in obj) {
+      result[key] = obj[key];
+    }
+  }
+  return result;
+}
+console.log(pick({a: 1, b: 2, c: 3}, ["a", "c"]))
