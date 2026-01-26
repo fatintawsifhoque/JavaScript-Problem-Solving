@@ -1634,3 +1634,14 @@ function pick(obj, keys) {
   return result;
 }
 console.log(pick({a: 1, b: 2, c: 3}, ["a", "c"]))
+
+function compactObject(obj) {
+  const result = {};
+  for (const key in obj) {
+    if (obj.hasOwnProperty(key) && obj[key]) {
+      result[key] = obj[key];
+    }
+  }
+  return result;
+}
+console.log(compactObject({a: 0, b: 1, c: "", d: "hello"}))
