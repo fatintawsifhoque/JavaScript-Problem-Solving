@@ -1645,3 +1645,13 @@ function compactObject(obj) {
   return result;
 }
 console.log(compactObject({a: 0, b: 1, c: "", d: "hello"}))
+
+function isEmptyObj(obj) {
+  if (Object.keys(obj).length) {
+    return false
+  }
+  else {
+    return true
+  }
+}
+console.log(isEmptyObj({a: 1}))
