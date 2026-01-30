@@ -1660,3 +1660,5 @@ function numberValues(obj) {
   return Object.values(obj).filter(val => typeof val === 'number');
 }
 console.log(numberValues({a: 1, b: "hello", c: 2}))
+
+
