@@ -1661,4 +1661,3 @@ function numberValues(obj) {
 }
 console.log(numberValues({a: 1, b: "hello", c: 2}))
 
-
