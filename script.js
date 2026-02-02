@@ -1661,3 +1661,10 @@ function numberValues(obj) {
 }
 console.log(numberValues({a: 1, b: "hello", c: 2}))
 
+function hasEmptyValue(obj) {
+  return Object.values(obj).some(val => 
+    val === "" || val === null || val === undefined
+  );
+}
+console.log(hasEmptyValue({name: "Fatin", email: ""}))
+
