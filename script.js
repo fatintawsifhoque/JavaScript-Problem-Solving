@@ -1668,3 +1668,9 @@ function hasEmptyValue(obj) {
 }
 console.log(hasEmptyValue({name: "Fatin", email: ""}))
 
+function hasUndefined(obj){
+  return Object.values(obj).some(el => 
+    el === undefined
+  )
+}
+console.log(hasUndefined({a: 1, b: 2}))
