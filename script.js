@@ -1673,4 +1673,14 @@ function hasUndefined(obj){
     el === undefined
   )
 }
-console.log(hasUndefined({a: 1, b: 2}))
+console.log(hasUndefined({ a: 1, b: 2 }))
+
+function isStrongPassword(str) {
+  if (str.length >= 6) {
+    return true
+  }
+  else {
+    return false
+  }
+}
+console.log(isStrongPassword("123456"))
