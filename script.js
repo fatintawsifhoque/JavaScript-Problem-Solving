@@ -1684,3 +1684,10 @@ function isStrongPassword(str) {
   }
 }
 console.log(isStrongPassword("123456"))
+
+function countWords(str) {
+  if (!str.trim()) {
+    return 0;
+  }
+  return str.trim().split(/\s+/).length;
+}
