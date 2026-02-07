@@ -1691,3 +1691,13 @@ function countWords(str) {
   }
   return str.trim().split(/\s+/).length;
 }
+
+function isPhoneNumber(str){
+  if (str.length === 11) {
+    return true
+  }
+  else {
+   return false
+  }
+}
+console.log(isPhoneNumber("01712345678"))
