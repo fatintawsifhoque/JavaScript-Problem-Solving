@@ -1701,3 +1701,13 @@ function isPhoneNumber(str){
   }
 }
 console.log(isPhoneNumber("01712345678"))
+
+function isSenior(age) {
+  if (age >= 60) {
+    return true
+  }
+  else {
+    return false
+  }
+}
+console.log(isSenior(59))
