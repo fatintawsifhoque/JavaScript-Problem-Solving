@@ -1711,3 +1711,7 @@ function isSenior(age) {
   }
 }
 console.log(isSenior(59))
+
+function isPhoneNumber(str) {
+  return str.length === 11 && /^\d+$/.test(str);
+}
