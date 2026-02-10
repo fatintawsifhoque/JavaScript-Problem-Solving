@@ -1715,3 +1715,17 @@ console.log(isSenior(59))
 function isPhoneNumber(str) {
   return str.length === 11 && /^\d+$/.test(str);
 }
+
+function allEqual(arr){
+  if (arr.length < 1) {
+    return true
+  }
+  let first = arr[0]
+  for (let i = 0; i < arr.length; i++){
+    if (arr[i] !== first) {
+      return false
+    }
+  }
+  return true
+}
+console.log(allEqual([]))
