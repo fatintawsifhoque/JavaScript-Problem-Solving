@@ -1729,3 +1729,8 @@ function allEqual(arr){
   return true
 }
 console.log(allEqual([]))
+
+function unique(arr) {
+  return [...new Set(arr)]
+}
+console.log(unique([1, 2, 2, 3]))
