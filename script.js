@@ -1734,3 +1734,10 @@ function unique(arr) {
   return [...new Set(arr)]
 }
 console.log(unique([1, 2, 2, 3]))
+
+function evenNumbers(arr){
+  return arr.filter(el=>
+    el % 2 == 0
+  )
+}
+console.log(evenNumbers([1, 2, 3, 4]))
