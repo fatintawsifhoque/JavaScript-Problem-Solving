@@ -1741,3 +1741,18 @@ function evenNumbers(arr){
   )
 }
 console.log(evenNumbers([1, 2, 3, 4]))
+
+function isSorted(arr) {
+  if (arr.length < 1) {
+    return true
+  }
+  let prev = arr[0]
+  for (let i = 1; i < arr.length; i++){
+    if (prev > arr[i]) {
+      return false
+    }
+    prev = arr[i]
+  }
+  return true
+}
+console.log(isSorted([]))
