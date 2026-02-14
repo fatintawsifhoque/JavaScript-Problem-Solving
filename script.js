@@ -1756,3 +1756,8 @@ function isSorted(arr) {
   return true
 }
 console.log(isSorted([]))
+
+function positiveNumbers(arr){
+  return arr.filter(el=>el>0)
+}
+console.log(positiveNumbers([-1, 0, 1, 2]))
