@@ -1761,3 +1761,14 @@ function positiveNumbers(arr){
   return arr.filter(el=>el>0)
 }
 console.log(positiveNumbers([-1, 0, 1, 2]))
+
+function numbersSorted(arr) {
+  let num=[]
+  arr.forEach((el) => {
+    if (typeof el == 'number') {
+num.push(el)
+    }
+  })
+  return num.sort(function(a, b){return a-b})
+}
+console.log(numbersSorted([3, "hello", 1, true, 2]))
