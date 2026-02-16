@@ -1772,3 +1772,16 @@ num.push(el)
   return num.sort(function(a, b){return a-b})
 }
 console.log(numbersSorted([3, "hello", 1, true, 2]))
+
+function uniqueStringsIgnoreCase(arr) {
+  let unique = []
+  let u2 =[]
+  arr.forEach((el) => {
+    if (!u2.includes(el.toLowerCase())) {
+      unique.push(el)
+      u2.push(el.toLowerCase())
+    }
+  })
+return unique
+}
+console.log(uniqueStringsIgnoreCase(["A", "b", "a",]))
