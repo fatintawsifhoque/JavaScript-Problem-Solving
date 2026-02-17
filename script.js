@@ -1785,3 +1785,18 @@ function uniqueStringsIgnoreCase(arr) {
 return unique
 }
 console.log(uniqueStringsIgnoreCase(["A", "b", "a",]))
+
+function uniqueByKey(arr, key) {
+  const seen = new Set();
+  const result = [];
+  
+  for (const obj of arr) {
+    const value = obj[key];
+    if (!seen.has(value)) {
+      seen.add(value);
+      result.push(obj);
+    }
+  }
+  
+  return result;
+}
