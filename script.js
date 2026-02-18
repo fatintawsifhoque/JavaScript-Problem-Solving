@@ -1800,3 +1800,20 @@ function uniqueByKey(arr, key) {
   
   return result;
 }
+
+function uniqueByDeep(arr) {
+  const seen = new Set();
+  const result = [];
+  
+  for (const obj of arr) {
+    
+    const str = JSON.stringify(obj);
+    
+    if (!seen.has(str)) {
+      seen.add(str);
+      result.push(obj);
+    }
+  }
+  
+  return result;
+}
