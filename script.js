@@ -1817,3 +1817,12 @@ function uniqueByDeep(arr) {
   
   return result;
 }
+
+function arraySum(arr) {
+    let sum = 0
+    arr.forEach((element) => {
+        sum +=element
+    });
+    return sum
+}
+console.log(arraySum([10, 20, 30]))
