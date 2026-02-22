@@ -1826,3 +1826,15 @@ function arraySum(arr) {
     return sum
 }
 console.log(arraySum([10, 20, 30]))
+
+
+function factorial(num) {
+    let n = 1;
+    let nu = num
+    while (nu >= 1) {
+        n *= nu
+       nu-- 
+    }
+    return n
+}
+console.log(factorial(5))
