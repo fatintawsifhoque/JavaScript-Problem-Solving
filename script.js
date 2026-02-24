@@ -1838,3 +1838,27 @@ function factorial(num) {
     return n
 }
 console.log(factorial(5))
+
+function advancedAnalyzeArray(arr) {
+    const counts = {
+        number: 0, string: 0, boolean: 0, null: 0, 
+        undefined: 0, object: 0, array: 0, function: 0,
+        symbol: 0, bigint: 0
+    };
+    
+    arr.forEach(element => {
+        if (element === null) {
+            counts.null++;
+        } else if (element === undefined) {
+            counts.undefined++;
+        } else if (Array.isArray(element)) {
+            counts.array++;
+        } else {
+            const type = typeof element;
+            counts[type] = (counts[type] || 0) + 1;
+        }
+    });
+    
+    return counts;
+}
+console.log(advancedAnalyzeArray([10,"fatin"]))
