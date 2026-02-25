@@ -1862,3 +1862,10 @@ function advancedAnalyzeArray(arr) {
     return counts;
 }
 console.log(advancedAnalyzeArray([10,"fatin"]))
+
+function createMultiplier(x) {
+    return function(y) {
+        return x * y;
+    };
+}
+console.log(createMultiplier(3)(7))
