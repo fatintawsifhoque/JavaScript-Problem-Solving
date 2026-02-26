@@ -1869,3 +1869,43 @@ function createMultiplier(x) {
     };
 }
 console.log(createMultiplier(3)(7))
+
+function Vehicle(brand, model, year) {
+    this.brand = brand;
+    this.model = model;
+    this.year = year;
+}
+
+
+Vehicle.prototype.getInfo = function() {
+    return this.brand + " " + this.model + " (" + this.year + ")";
+};
+
+function Car(brand, model, year, fuelType) {
+  
+    Vehicle.call(this, brand, model, year);
+    this.fuelType = fuelType;
+}
+
+Car.prototype = Object.create(Vehicle.prototype);
+Car.prototype.constructor = Car; 
+
+
+Car.prototype.refuel = function() {
+    console.log("Refueling... " + this.brand + " " + this.model + " is getting " + this.fuelType);
+};
+
+ 
+const myCar = new Car("Toyota", "Camry", 2022, "Petrol");
+const anotherCar = new Car("Tesla", "Model 3", 2023, "Electric");
+
+console.log(myCar.getInfo());   
+myCar.refuel();              
+
+console.log(anotherCar.getInfo()); 
+anotherCar.refuel();      
+
+
+console.log(myCar instanceof Car);       
+console.log(myCar instanceof Vehicle);    
+console.log(myCar instanceof Object);   
