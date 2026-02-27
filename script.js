@@ -1909,3 +1909,9 @@ anotherCar.refuel();
 console.log(myCar instanceof Car);       
 console.log(myCar instanceof Vehicle);    
 console.log(myCar instanceof Object);   
+
+
+function findMax(arr) {
+    return Math.max(...arr)
+}
+console.log(findMax([5, 2, 9, 1, 7]))
