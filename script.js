@@ -1915,3 +1915,10 @@ function findMax(arr) {
     return Math.max(...arr)
 }
 console.log(findMax([5, 2, 9, 1, 7]))
+
+function sumArray(arr) {
+    let sum = 0
+    arr.forEach(el => sum += el)
+    return sum
+}
+console.log(sumArray([1, 2, 3, 4, 5]))
