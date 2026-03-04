@@ -1927,3 +1927,9 @@ function filterEven(arr) {
     return arr.filter(el => el % 2 == 0)
 }
 console.log(filterEven([1, 2, 3, 4, 5, 6]))
+
+
+function contains(arr, con) {
+    return arr.includes(con)
+}
+console.log(contains([10, 20, 30], 40))
