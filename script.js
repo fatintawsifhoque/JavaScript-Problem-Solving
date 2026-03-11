@@ -1933,3 +1933,20 @@ function contains(arr, con) {
     return arr.includes(con)
 }
 console.log(contains([10, 20, 30], 40))
+
+function chunkArray(arr, c) {
+    if (c <= 0) return [];
+    
+    let newArr = [];
+    
+    arr.forEach((el) => {
+        
+        if (!newArr.length || newArr[newArr.length - 1].length === c) {
+            newArr.push([]);
+        }
+    
+        newArr[newArr.length - 1].push(el);
+    });
+    
+    return newArr;
+}
