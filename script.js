@@ -1950,3 +1950,26 @@ function chunkArray(arr, c) {
     
     return newArr;
 }
+
+function moveZerosToEnd(arr) {
+    let newArr = []
+    let count = 0
+    arr.forEach((el) => {
+        if (el == 0) {
+            count++
+        }
+        else {
+            newArr.push(el)
+        }
+    }
+        
+    )
+    
+        while (count > 0) {
+            newArr.push(0)
+            count--
+            }
+        
+return newArr
+}
+console.log(moveZerosToEnd([0, 1, 0, 3, 12]))
