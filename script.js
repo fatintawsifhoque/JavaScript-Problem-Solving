@@ -1973,3 +1973,14 @@ function moveZerosToEnd(arr) {
 return newArr
 }
 console.log(moveZerosToEnd([0, 1, 0, 3, 12]))
+
+function findCommonElements(arr, arr2) {
+    let acArr = []
+    arr.forEach((el) => {
+        if (arr2.includes(el) && !acArr.includes(el)) {
+            acArr.push(el)
+        }
+    })
+    return acArr
+}
+console.log(findCommonElements([1, 2, 3, 4], [3, 4, 5, 6]))
