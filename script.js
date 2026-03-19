@@ -1984,3 +1984,17 @@ function findCommonElements(arr, arr2) {
     return acArr
 }
 console.log(findCommonElements([1, 2, 3, 4], [3, 4, 5, 6]))
+
+function countOccurrences(arr) {
+    const countObj = {};
+    
+    arr.forEach((el) => {
+        if (countObj[el]) {
+            countObj[el]++;
+        } else {
+            countObj[el] = 1;
+        }
+    });
+    
+    return countObj;
+}
