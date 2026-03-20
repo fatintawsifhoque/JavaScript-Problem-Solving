@@ -1998,3 +1998,14 @@ function countOccurrences(arr) {
     
     return countObj;
 }
+function findMissingNumber(arr) {
+    let sorted = [...arr].sort((a, b) => a - b);
+    
+    for (let i = 0; i < sorted.length; i++) {
+        if (sorted[i] !== i) {
+            return i;
+        }
+    }
+    return sorted.length;
+}
+console.log(findMissingNumber([9, 6, 4, 2, 3, 5, 7, 0, 1]))
