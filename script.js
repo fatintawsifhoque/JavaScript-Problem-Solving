@@ -2009,3 +2009,18 @@ function findMissingNumber(arr) {
     return sorted.length;
 }
 console.log(findMissingNumber([9, 6, 4, 2, 3, 5, 7, 0, 1]))
+
+function findSecondLargest(arr) {
+    if (arr.length <= 1) {
+        return null;
+    }
+    
+    let unique = [...new Set(arr)].sort((a, b) => b - a);
+
+    if (unique.length < 2) {
+        return null;
+    }
+    
+    return unique[1]; 
+}
+console.log(findSecondLargest([1, 2]))
