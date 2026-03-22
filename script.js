@@ -2024,3 +2024,21 @@ function findSecondLargest(arr) {
     return unique[1]; 
 }
 console.log(findSecondLargest([1, 2]))
+
+function twoSum(arr, target) {
+    const seen = new Map();
+    
+    for (let i = 0; i < arr.length; i++) {
+        const complement = target - arr[i];
+   
+        if (seen.has(complement)) {
+            return [complement, arr[i]];
+        }
+        
+        seen.set(arr[i], i);
+    }
+    
+    return null;
+}
+
+console.log(twoSum([2, 7, 11, 15], 9));
