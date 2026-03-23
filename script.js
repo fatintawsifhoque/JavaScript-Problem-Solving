@@ -2042,3 +2042,13 @@ function twoSum(arr, target) {
 }
 
 console.log(twoSum([2, 7, 11, 15], 9));
+
+function check(num) {
+    if (num % 2 == 0) {
+        return 'even'
+    }
+    else {
+        return 'odd'
+    }
+}
+console.log(check(2))
