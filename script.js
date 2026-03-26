@@ -2075,3 +2075,8 @@ function maxSubArraySum(arr) {
     return maxSum;
 }
 console.log(maxSubArraySum([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
+
+function removeDuplicates(arr) {
+    return [...new Set(arr)]
+}
+console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 5]))
