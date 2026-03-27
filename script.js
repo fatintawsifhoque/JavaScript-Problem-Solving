@@ -2080,3 +2080,26 @@ function removeDuplicates(arr) {
     return [...new Set(arr)]
 }
 console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 5]))
+
+function firstNonRepeatingChar(str) {
+
+    if (!str || str.length === 0) {
+        return -1;
+    }
+    
+    const charCount = new Map();
+    
+    for (let char of str) {
+        charCount.set(char, (charCount.get(char) || 0) + 1);
+    }
+    
+    for (let char of str) {
+        if (charCount.get(char) === 1) {
+            return char;
+        }
+    }
+    
+    return -1;
+}
+
+console.log(firstNonRepeatingChar("leetcode"));        
