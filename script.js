@@ -2116,4 +2116,14 @@ function isAnagram(str, str2) {
 }
 
 console.log(isAnagram("listen", "silent")); 
-console.log(isAnagram("apple", "pale"));    
+console.log(isAnagram("apple", "pale"));   
+
+function isValidPalindrome(str) {
+    const cleaned = str.replace(/[^a-z0-9]/gi, '').toLowerCase();
+    const rev = cleaned.split('').reverse().join(''); 
+    return cleaned === rev;
+}
+
+console.log(isValidPalindrome("A man, a plan, a canal: Panama")); 
+console.log(isValidPalindrome("race a car"));
+console.log(isValidPalindrome("Madam")); 
