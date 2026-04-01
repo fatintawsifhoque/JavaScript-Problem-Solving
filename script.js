@@ -2139,3 +2139,9 @@ function countVowels(str) {
     return count
 }
 console.log(countVowels("Hello"))
+
+function reverseWords(sentence) {
+    return sentence.trim().split(/\s+/).reverse().join(' ');
+}
+
+console.log(reverseWords("  I love  coding  ")); 
