@@ -2145,3 +2145,24 @@ function reverseWords(sentence) {
 }
 
 console.log(reverseWords("  I love  coding  ")); 
+
+function findLongestWord(str) {
+    // খালি স্ট্রিং চেক
+    if (!str || str.trim() === '') {
+        return "";
+    }
+    
+    // একাধিক স্পেস হ্যান্ডেল করতে Regex ব্যবহার
+    let arr = str.trim().split(/\s+/);
+    let word = arr[0];
+    
+    arr.forEach((el) => {
+        if (word.length < el.length) {
+            word = el;
+        }
+    });
+    
+    return word;
+}
+
+console.log(findLongestWord("I love JavaScript programming")); 
