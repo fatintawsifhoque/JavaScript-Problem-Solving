@@ -2166,3 +2166,19 @@ function findLongestWord(str) {
 }
 
 console.log(findLongestWord("I love JavaScript programming")); 
+
+function toTitleCase(str) {
+    if (!str || str.trim() === '') {
+        return "";
+    }
+    
+    const words = str.trim().split(/\s+/);
+    const result = [];
+    
+    for (let word of words) {
+        const capitalized = word[0].toUpperCase() + word.slice(1).toLowerCase();
+        result.push(capitalized);
+    }
+    
+    return result.join(' ');
+}
