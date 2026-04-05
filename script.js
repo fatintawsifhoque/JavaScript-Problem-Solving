@@ -2182,3 +2182,22 @@ function toTitleCase(str) {
     
     return result.join(' ');
 }
+
+function findMostFrequent(arr) {
+    if (arr.length === 0) return null;
+
+    let frequency = {};
+    let maxElement = arr[0];
+    let maxCount = 0;
+
+    for (let el of arr) {
+        frequency[el] = (frequency[el] || 0) + 1;
+
+        if (frequency[el] > maxCount) {
+            maxCount = frequency[el];
+            maxElement = el;
+        }
+    }
+
+    return maxElement;
+}
