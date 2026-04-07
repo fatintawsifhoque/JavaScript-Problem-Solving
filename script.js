@@ -2201,3 +2201,12 @@ function findMostFrequent(arr) {
 
     return maxElement;
 }
+function rotateArray(arr, k) {
+    if (arr.length === 0) return [];
+    
+    k = k % arr.length;
+    
+    if (k === 0) return arr;
+    
+    return arr.slice(-k).concat(arr.slice(0, -k));
+}
